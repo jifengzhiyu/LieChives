@@ -2,7 +2,7 @@
 //  ViewController.m
 //  LieChives
 //
-//  Created by 翟佳阳 on 2022/1/31.
+//  Created by 翟佳阳(Jifengzhiyu) on 2022/1/31.
 //
 
 #import "ViewController.h"

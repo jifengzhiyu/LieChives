@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		3B6C906B27A7E19900FB4F5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C906A27A7E19900FB4F5B /* AppDelegate.m */; };
 		3B6C906E27A7E19900FB4F5B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C906D27A7E19900FB4F5B /* SceneDelegate.m */; };
-		3B6C907127A7E19900FB4F5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C907027A7E19900FB4F5B /* ViewController.m */; };
-		3B6C907427A7E19900FB4F5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C907227A7E19900FB4F5B /* Main.storyboard */; };
 		3B6C907727A7E19900FB4F5B /* LieChives.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C907527A7E19900FB4F5B /* LieChives.xcdatamodeld */; };
 		3B6C907927A7E19B00FB4F5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C907827A7E19B00FB4F5B /* Assets.xcassets */; };
 		3B6C907C27A7E19B00FB4F5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C907A27A7E19B00FB4F5B /* LaunchScreen.storyboard */; };
 		3B6C907F27A7E19B00FB4F5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C907E27A7E19B00FB4F5B /* main.m */; };
+		3B6D7BD427A801C40044F44E /* JFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BD327A801C40044F44E /* JFHomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,14 +22,14 @@
 		3B6C906A27A7E19900FB4F5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3B6C906C27A7E19900FB4F5B /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		3B6C906D27A7E19900FB4F5B /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		3B6C906F27A7E19900FB4F5B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3B6C907027A7E19900FB4F5B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3B6C907327A7E19900FB4F5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B6C907627A7E19900FB4F5B /* LieChives.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LieChives.xcdatamodel; sourceTree = "<group>"; };
 		3B6C907827A7E19B00FB4F5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B6C907B27A7E19B00FB4F5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B6C907D27A7E19B00FB4F5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B6C907E27A7E19B00FB4F5B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B6D7BD227A801C40044F44E /* JFHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFHomeViewController.h; sourceTree = "<group>"; };
+		3B6D7BD327A801C40044F44E /* JFHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFHomeViewController.m; sourceTree = "<group>"; };
+		3B6D7BD527A802D20044F44E /* 开发流程.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "开发流程.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +46,7 @@
 		3B6C905D27A7E19900FB4F5B = {
 			isa = PBXGroup;
 			children = (
+				3B6D7BD527A802D20044F44E /* 开发流程.md */,
 				3B6C906827A7E19900FB4F5B /* LieChives */,
 				3B6C906727A7E19900FB4F5B /* Products */,
 			);
@@ -67,9 +67,8 @@
 				3B6C906A27A7E19900FB4F5B /* AppDelegate.m */,
 				3B6C906C27A7E19900FB4F5B /* SceneDelegate.h */,
 				3B6C906D27A7E19900FB4F5B /* SceneDelegate.m */,
-				3B6C906F27A7E19900FB4F5B /* ViewController.h */,
-				3B6C907027A7E19900FB4F5B /* ViewController.m */,
-				3B6C907227A7E19900FB4F5B /* Main.storyboard */,
+				3B6D7BD227A801C40044F44E /* JFHomeViewController.h */,
+				3B6D7BD327A801C40044F44E /* JFHomeViewController.m */,
 				3B6C907827A7E19B00FB4F5B /* Assets.xcassets */,
 				3B6C907A27A7E19B00FB4F5B /* LaunchScreen.storyboard */,
 				3B6C907D27A7E19B00FB4F5B /* Info.plist */,
@@ -106,6 +105,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				CLASSPREFIX = JF;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					3B6C906527A7E19900FB4F5B = {
@@ -138,7 +138,6 @@
 			files = (
 				3B6C907C27A7E19B00FB4F5B /* LaunchScreen.storyboard in Resources */,
 				3B6C907927A7E19B00FB4F5B /* Assets.xcassets in Resources */,
-				3B6C907427A7E19900FB4F5B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,8 +149,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6C907F27A7E19B00FB4F5B /* main.m in Sources */,
-				3B6C907127A7E19900FB4F5B /* ViewController.m in Sources */,
 				3B6C906B27A7E19900FB4F5B /* AppDelegate.m in Sources */,
+				3B6D7BD427A801C40044F44E /* JFHomeViewController.m in Sources */,
 				3B6C907727A7E19900FB4F5B /* LieChives.xcdatamodeld in Sources */,
 				3B6C906E27A7E19900FB4F5B /* SceneDelegate.m in Sources */,
 			);
@@ -160,14 +159,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3B6C907227A7E19900FB4F5B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3B6C907327A7E19900FB4F5B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3B6C907A27A7E19B00FB4F5B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -230,7 +221,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -283,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -303,7 +294,6 @@
 				INFOPLIST_FILE = LieChives/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -331,7 +321,6 @@
 				INFOPLIST_FILE = LieChives/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

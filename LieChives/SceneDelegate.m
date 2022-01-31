@@ -7,7 +7,7 @@
 
 #import "SceneDelegate.h"
 #import "AppDelegate.h"
-
+#import "JFHomeViewController.h"
 @interface SceneDelegate ()
 
 @end
@@ -19,6 +19,27 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    
+    //取消了默认配置文件window 就变成了nil 这里做一个验证
+    if (self.window == nil) {
+        NSLog(@"window => nil");
+            }
+    
+    //这里给需要用到的 win scene 改个名,并把它强转UIWindowScene（UIScene的子类）
+            UIWindowScene *windowScene = (UIWindowScene *)scene;
+    // 实例化新的 window 视图窗口 => uiwindow 本质是个 uiview 而已
+    // 另外这里需要关联当前系统给到的场景 windowScene
+        UIWindow *newWindow = [[UIWindow alloc] initWithWindowScene:windowScene];
+        newWindow.frame = windowScene.coordinateSpace.bounds;
+    
+        JFHomeViewController *homeViewCntroller = [JFHomeViewController new];
+        homeViewCntroller.view.backgroundColor = [UIColor greenColor];
+    
+        newWindow.rootViewController = homeViewCntroller;
+    
+        [newWindow makeKeyAndVisible];
+    
+        self.window = newWindow;
 }
 
 

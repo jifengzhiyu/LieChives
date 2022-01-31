@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  LieChives
+//  LieChives（躺平韭菜）
 //
 //  Created by 翟佳阳 on 2022/1/31.
 //

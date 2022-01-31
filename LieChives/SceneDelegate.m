@@ -30,15 +30,17 @@
     // 实例化新的 window 视图窗口 => uiwindow 本质是个 uiview 而已
     // 另外这里需要关联当前系统给到的场景 windowScene
         UIWindow *newWindow = [[UIWindow alloc] initWithWindowScene:windowScene];
+    //设置newWindow大小
         newWindow.frame = windowScene.coordinateSpace.bounds;
-    
+    //自定义初始化VC
         JFHomeViewController *homeViewCntroller = [JFHomeViewController new];
+    //test-----颜色测试（用完注释）
         homeViewCntroller.view.backgroundColor = [UIColor greenColor];
-    
+    //替换VC
         newWindow.rootViewController = homeViewCntroller;
-    
+    //显示newWindow
         [newWindow makeKeyAndVisible];
-    
+    //替换系统window
         self.window = newWindow;
 }
 

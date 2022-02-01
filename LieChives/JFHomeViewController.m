@@ -52,13 +52,15 @@
     }];
     
     //日期
-    //日
+    //日 label
     UILabel *dateLbl = [UILabel new];
     NSString *dateText = @"31";
     
     //富文本设置
-    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:dateText attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:70]}];
-    dateLbl.attributedText = attrString;
+    NSMutableParagraphStyle *dateParagraphStyle = [NSMutableParagraphStyle new];
+    dateParagraphStyle.alignment = NSTextAlignmentCenter;
+    NSMutableAttributedString *dateAttrString = [[NSMutableAttributedString alloc] initWithString:dateText attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:70], NSParagraphStyleAttributeName : dateParagraphStyle}];
+    dateLbl.attributedText = dateAttrString;
     
     [presentTimeView addSubview:dateLbl];
     [dateLbl mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -68,18 +70,55 @@
             
     }];
     
-    //次数容纳器
-    UIView *TimesView = [UIView new];
-    TimesView.backgroundColor = [UIColor colorWithRed:243 / 255.0 green:243 / 255.0 blue:243 / 255.0 alpha:1];
+    //月 年 label
+    UILabel *monthYearLbl = [UILabel new];
+    NSString *monthYearText = @"12月2022年";
     
-    [presentTimeBackgroundView addSubview:TimesView];
-    [TimesView mas_makeConstraints:^(MASConstraintMaker *make) {
+    //富文本设置（大小，居中）
+    NSMutableParagraphStyle *monthYearParagraphStyle = [NSMutableParagraphStyle new];
+    monthYearParagraphStyle.alignment = NSTextAlignmentCenter;
+    NSMutableAttributedString *monthYearAttrString = [[NSMutableAttributedString alloc] initWithString:monthYearText attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20], NSParagraphStyleAttributeName : monthYearParagraphStyle}];
+    monthYearLbl.attributedText = monthYearAttrString;
+    
+    [presentTimeView addSubview:monthYearLbl];
+    [monthYearLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+            make.centerX.equalTo(presentTimeView.mas_centerX);
+            make.top.mas_equalTo(dateLbl.mas_bottom).offset(5);
+            
+    }];
+    
+    
+    //次数容纳器
+    UIView *timesView = [UIView new];
+    timesView.backgroundColor = [UIColor colorWithRed:243 / 255.0 green:243 / 255.0 blue:243 / 255.0 alpha:1];
+    
+    [presentTimeBackgroundView addSubview:timesView];
+    [timesView mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.right.equalTo(presentTimeBackgroundView.mas_right);
         make.top.equalTo(presentTimeBackgroundView.mas_top);
         make.bottom.equalTo(presentTimeBackgroundView.mas_bottom);
         make.width.mas_equalTo(160);
         
+    }];
+    
+    //次数 label
+    UILabel *overTimesLbl = [UILabel new];
+    NSString *overTimesText = @"999次";
+    
+    //富文本设置（大小，居中）
+    NSMutableParagraphStyle *overTimesParagraphStyle = [NSMutableParagraphStyle new];
+    overTimesParagraphStyle.alignment = NSTextAlignmentCenter;
+    NSMutableAttributedString *overTimesAttrString = [[NSMutableAttributedString alloc] initWithString:overTimesText attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:50], NSParagraphStyleAttributeName : overTimesParagraphStyle}];
+    overTimesLbl.attributedText = overTimesAttrString;
+    
+    [timesView addSubview:overTimesLbl];
+    [overTimesLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+            make.centerX.equalTo(timesView.mas_centerX);
+            make.centerY.equalTo(timesView.mas_centerY);
+            
     }];
     
 }

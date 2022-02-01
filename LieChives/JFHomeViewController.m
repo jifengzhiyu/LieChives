@@ -29,9 +29,10 @@
     
     [self.view addSubview:presentTimeBackgroundView];
     [presentTimeBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
             make.centerX.equalTo(self.view.mas_centerX);
             make.width.mas_equalTo(320);
-            make.height.mas_equalTo(140);
+            make.height.mas_equalTo(160);
             make.top.mas_equalTo(self.view.mas_top).offset(100);
     }];
     
@@ -42,10 +43,29 @@
     
     [presentTimeBackgroundView addSubview:presentTimeView];
     [presentTimeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
         make.left.equalTo(presentTimeBackgroundView.mas_left);
         make.top.equalTo(presentTimeBackgroundView.mas_top);
         make.bottom.equalTo(presentTimeBackgroundView.mas_bottom);
         make.width.mas_equalTo(160);
+        
+    }];
+    
+    //日期
+    //日
+    UILabel *dateLbl = [UILabel new];
+    NSString *dateText = @"31";
+    
+    //富文本设置
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:dateText attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:70]}];
+    dateLbl.attributedText = attrString;
+    
+    [presentTimeView addSubview:dateLbl];
+    [dateLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+            make.centerX.equalTo(presentTimeView.mas_centerX);
+            make.top.mas_equalTo(20);
+            
     }];
     
     //次数容纳器
@@ -54,10 +74,12 @@
     
     [presentTimeBackgroundView addSubview:TimesView];
     [TimesView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
         make.right.equalTo(presentTimeBackgroundView.mas_right);
         make.top.equalTo(presentTimeBackgroundView.mas_top);
         make.bottom.equalTo(presentTimeBackgroundView.mas_bottom);
         make.width.mas_equalTo(160);
+        
     }];
     
 }

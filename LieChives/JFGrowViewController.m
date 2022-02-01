@@ -1,26 +1,24 @@
 //
-//  JFHomeViewController.m
+//  JFGrowViewController.m
 //  LieChives
 //
-//  Created by 翟佳阳 on 2022/1/31.
+//  Created by 翟佳阳 on 2022/2/1.
 //
 
-#import "JFHomeViewController.h"
+#import "JFGrowViewController.h"
 
-@interface JFHomeViewController ()
+@interface JFGrowViewController ()
 
 @end
 
-@implementation JFHomeViewController
+@implementation JFGrowViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-    
-}
 
+}
 
 /*
 #pragma mark - Navigation

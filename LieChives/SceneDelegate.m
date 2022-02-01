@@ -7,7 +7,7 @@
 
 #import "SceneDelegate.h"
 #import "AppDelegate.h"
-#import "JFHomeViewController.h"
+#import "JFMainViewController.h"
 @interface SceneDelegate ()
 
 @end
@@ -32,13 +32,14 @@
         UIWindow *newWindow = [[UIWindow alloc] initWithWindowScene:windowScene];
     //设置newWindow大小
         newWindow.frame = windowScene.coordinateSpace.bounds;
-    //自定义初始化VC
-        JFHomeViewController *homeViewCntroller = [JFHomeViewController new];
+    //test-----自定义初始化VC
+//        JFHomeViewController *homeViewCntroller = [JFHomeViewController new];
     //test-----颜色测试（用完注释）
-        homeViewCntroller.view.backgroundColor = [UIColor greenColor];
-    //替换VC
-        newWindow.rootViewController = homeViewCntroller;
-    //显示newWindow
+//        homeViewCntroller.view.backgroundColor = [UIColor greenColor];
+    //初始化并替换VC
+        newWindow.rootViewController = [JFMainViewController new];
+    
+        //显示newWindow
         [newWindow makeKeyAndVisible];
     //替换系统window
         self.window = newWindow;

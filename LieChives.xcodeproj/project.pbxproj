@@ -14,6 +14,10 @@
 		3B6C907C27A7E19B00FB4F5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6C907A27A7E19B00FB4F5B /* LaunchScreen.storyboard */; };
 		3B6C907F27A7E19B00FB4F5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C907E27A7E19B00FB4F5B /* main.m */; };
 		3B6D7BD427A801C40044F44E /* JFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BD327A801C40044F44E /* JFHomeViewController.m */; };
+		3B6D7BDE27A81D970044F44E /* JFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BDD27A81D970044F44E /* JFMainViewController.m */; };
+		3B6D7BE727A83CA20044F44E /* JFTipsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BE627A83CA20044F44E /* JFTipsTableViewController.m */; };
+		3B6D7BED27A842FD0044F44E /* JFGrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BEC27A842FD0044F44E /* JFGrowViewController.m */; };
+		3B6D7BF027A8430E0044F44E /* JFSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BEF27A8430E0044F44E /* JFSettingTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,14 @@
 		3B6D7BD227A801C40044F44E /* JFHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFHomeViewController.h; sourceTree = "<group>"; };
 		3B6D7BD327A801C40044F44E /* JFHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFHomeViewController.m; sourceTree = "<group>"; };
 		3B6D7BD527A802D20044F44E /* 开发流程.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "开发流程.md"; sourceTree = "<group>"; };
+		3B6D7BDC27A81D970044F44E /* JFMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFMainViewController.h; sourceTree = "<group>"; };
+		3B6D7BDD27A81D970044F44E /* JFMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFMainViewController.m; sourceTree = "<group>"; };
+		3B6D7BE527A83CA20044F44E /* JFTipsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFTipsTableViewController.h; sourceTree = "<group>"; };
+		3B6D7BE627A83CA20044F44E /* JFTipsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFTipsTableViewController.m; sourceTree = "<group>"; };
+		3B6D7BEB27A842FD0044F44E /* JFGrowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFGrowViewController.h; sourceTree = "<group>"; };
+		3B6D7BEC27A842FD0044F44E /* JFGrowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFGrowViewController.m; sourceTree = "<group>"; };
+		3B6D7BEE27A8430E0044F44E /* JFSettingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFSettingTableViewController.h; sourceTree = "<group>"; };
+		3B6D7BEF27A8430E0044F44E /* JFSettingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFSettingTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,19 +75,75 @@
 		3B6C906827A7E19900FB4F5B /* LieChives */ = {
 			isa = PBXGroup;
 			children = (
+				3B6D7BE027A81F340044F44E /* View(视图和控制器) */,
+				3B6D7BDF27A81DA80044F44E /* Other */,
+				3B6D7BDC27A81D970044F44E /* JFMainViewController.h */,
+				3B6D7BDD27A81D970044F44E /* JFMainViewController.m */,
+			);
+			path = LieChives;
+			sourceTree = "<group>";
+		};
+		3B6D7BDF27A81DA80044F44E /* Other */ = {
+			isa = PBXGroup;
+			children = (
 				3B6C906927A7E19900FB4F5B /* AppDelegate.h */,
 				3B6C906A27A7E19900FB4F5B /* AppDelegate.m */,
 				3B6C906C27A7E19900FB4F5B /* SceneDelegate.h */,
 				3B6C906D27A7E19900FB4F5B /* SceneDelegate.m */,
-				3B6D7BD227A801C40044F44E /* JFHomeViewController.h */,
-				3B6D7BD327A801C40044F44E /* JFHomeViewController.m */,
 				3B6C907827A7E19B00FB4F5B /* Assets.xcassets */,
 				3B6C907A27A7E19B00FB4F5B /* LaunchScreen.storyboard */,
 				3B6C907D27A7E19B00FB4F5B /* Info.plist */,
 				3B6C907E27A7E19B00FB4F5B /* main.m */,
 				3B6C907527A7E19900FB4F5B /* LieChives.xcdatamodeld */,
 			);
-			path = LieChives;
+			name = Other;
+			sourceTree = "<group>";
+		};
+		3B6D7BE027A81F340044F44E /* View(视图和控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				3B6D7BE127A81F800044F44E /* Home */,
+				3B6D7BE227A81F970044F44E /* Tips */,
+				3B6D7BE327A81FAA0044F44E /* Grow */,
+				3B6D7BE427A81FC10044F44E /* Setting */,
+			);
+			name = "View(视图和控制器)";
+			sourceTree = "<group>";
+		};
+		3B6D7BE127A81F800044F44E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3B6D7BD227A801C40044F44E /* JFHomeViewController.h */,
+				3B6D7BD327A801C40044F44E /* JFHomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		3B6D7BE227A81F970044F44E /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				3B6D7BE527A83CA20044F44E /* JFTipsTableViewController.h */,
+				3B6D7BE627A83CA20044F44E /* JFTipsTableViewController.m */,
+			);
+			name = Tips;
+			sourceTree = "<group>";
+		};
+		3B6D7BE327A81FAA0044F44E /* Grow */ = {
+			isa = PBXGroup;
+			children = (
+				3B6D7BEB27A842FD0044F44E /* JFGrowViewController.h */,
+				3B6D7BEC27A842FD0044F44E /* JFGrowViewController.m */,
+			);
+			name = Grow;
+			sourceTree = "<group>";
+		};
+		3B6D7BE427A81FC10044F44E /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				3B6D7BEE27A8430E0044F44E /* JFSettingTableViewController.h */,
+				3B6D7BEF27A8430E0044F44E /* JFSettingTableViewController.m */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +217,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6C907F27A7E19B00FB4F5B /* main.m in Sources */,
+				3B6D7BE727A83CA20044F44E /* JFTipsTableViewController.m in Sources */,
 				3B6C906B27A7E19900FB4F5B /* AppDelegate.m in Sources */,
 				3B6D7BD427A801C40044F44E /* JFHomeViewController.m in Sources */,
+				3B6D7BDE27A81D970044F44E /* JFMainViewController.m in Sources */,
+				3B6D7BF027A8430E0044F44E /* JFSettingTableViewController.m in Sources */,
 				3B6C907727A7E19900FB4F5B /* LieChives.xcdatamodeld in Sources */,
 				3B6C906E27A7E19900FB4F5B /* SceneDelegate.m in Sources */,
+				3B6D7BED27A842FD0044F44E /* JFGrowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +366,7 @@
 				INFOPLIST_FILE = LieChives/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -321,6 +394,7 @@
 				INFOPLIST_FILE = LieChives/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

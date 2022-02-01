@@ -52,6 +52,10 @@
     }];
     
     //日期
+    
+    //获取时间
+    
+    
     //日 label
     UILabel *dateLbl = [UILabel new];
     NSString *dateText = @"31";

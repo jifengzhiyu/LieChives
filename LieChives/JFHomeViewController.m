@@ -6,7 +6,7 @@
 //
 
 #import "JFHomeViewController.h"
-
+#import "Masonry.h"
 @interface JFHomeViewController ()
 
 @end
@@ -17,10 +17,50 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setupSubViews];
     
     
 }
 
+- (void)setupSubViews{
+    //大的presentTimeBackgroundView里面有两个View，两个View里面再有其他控件
+    UIView *presentTimeBackgroundView = [UIView new];
+    presentTimeBackgroundView.backgroundColor = [UIColor grayColor];
+    
+    [self.view addSubview:presentTimeBackgroundView];
+    [presentTimeBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.view.mas_centerX);
+            make.width.mas_equalTo(320);
+            make.height.mas_equalTo(140);
+            make.top.mas_equalTo(self.view.mas_top).offset(100);
+    }];
+    
+
+    //时间view容纳器
+    UIView *presentTimeView = [UIView new];
+    presentTimeView.backgroundColor = [UIColor colorWithRed:211 / 255.0 green:251 / 255.0 blue:226 / 255.0 alpha:1];
+    
+    [presentTimeBackgroundView addSubview:presentTimeView];
+    [presentTimeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(presentTimeBackgroundView.mas_left);
+        make.top.equalTo(presentTimeBackgroundView.mas_top);
+        make.bottom.equalTo(presentTimeBackgroundView.mas_bottom);
+        make.width.mas_equalTo(160);
+    }];
+    
+    //次数容纳器
+    UIView *TimesView = [UIView new];
+    TimesView.backgroundColor = [UIColor colorWithRed:243 / 255.0 green:243 / 255.0 blue:243 / 255.0 alpha:1];
+    
+    [presentTimeBackgroundView addSubview:TimesView];
+    [TimesView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(presentTimeBackgroundView.mas_right);
+        make.top.equalTo(presentTimeBackgroundView.mas_top);
+        make.bottom.equalTo(presentTimeBackgroundView.mas_bottom);
+        make.width.mas_equalTo(160);
+    }];
+    
+}
 
 /*
 #pragma mark - Navigation

@@ -18,6 +18,7 @@
 		3B6D7BE727A83CA20044F44E /* JFTipsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BE627A83CA20044F44E /* JFTipsTableViewController.m */; };
 		3B6D7BED27A842FD0044F44E /* JFGrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BEC27A842FD0044F44E /* JFGrowViewController.m */; };
 		3B6D7BF027A8430E0044F44E /* JFSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BEF27A8430E0044F44E /* JFSettingTableViewController.m */; };
+		44646EDC0E251BEE79036CAA /* Pods_LieChives.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5503D4E27BB999334BEF3A /* Pods_LieChives.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,9 @@
 		3B6D7BEC27A842FD0044F44E /* JFGrowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFGrowViewController.m; sourceTree = "<group>"; };
 		3B6D7BEE27A8430E0044F44E /* JFSettingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFSettingTableViewController.h; sourceTree = "<group>"; };
 		3B6D7BEF27A8430E0044F44E /* JFSettingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFSettingTableViewController.m; sourceTree = "<group>"; };
+		3C27940B218BB7F49B786F66 /* Pods-LieChives.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LieChives.release.xcconfig"; path = "Target Support Files/Pods-LieChives/Pods-LieChives.release.xcconfig"; sourceTree = "<group>"; };
+		4B2CF6D33EE3D937A7EA1289 /* Pods-LieChives.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LieChives.debug.xcconfig"; path = "Target Support Files/Pods-LieChives/Pods-LieChives.debug.xcconfig"; sourceTree = "<group>"; };
+		5B5503D4E27BB999334BEF3A /* Pods_LieChives.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LieChives.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,18 +53,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44646EDC0E251BEE79036CAA /* Pods_LieChives.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2528C5D5BE5FC655289E3F02 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B2CF6D33EE3D937A7EA1289 /* Pods-LieChives.debug.xcconfig */,
+				3C27940B218BB7F49B786F66 /* Pods-LieChives.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3B6C905D27A7E19900FB4F5B = {
 			isa = PBXGroup;
 			children = (
 				3B6D7BD527A802D20044F44E /* 开发流程.md */,
 				3B6C906827A7E19900FB4F5B /* LieChives */,
 				3B6C906727A7E19900FB4F5B /* Products */,
+				2528C5D5BE5FC655289E3F02 /* Pods */,
+				DE54C3440FB2BCE3C2CE80F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +163,14 @@
 			name = Setting;
 			sourceTree = "<group>";
 		};
+		DE54C3440FB2BCE3C2CE80F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B5503D4E27BB999334BEF3A /* Pods_LieChives.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B6C908227A7E19B00FB4F5B /* Build configuration list for PBXNativeTarget "LieChives" */;
 			buildPhases = (
+				8FCF593A1F0C8B4F59BECC87 /* [CP] Check Pods Manifest.lock */,
 				3B6C906227A7E19900FB4F5B /* Sources */,
 				3B6C906327A7E19900FB4F5B /* Frameworks */,
 				3B6C906427A7E19900FB4F5B /* Resources */,
+				B9302D23BFA04AC4093E5BFF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +237,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8FCF593A1F0C8B4F59BECC87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LieChives-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9302D23BFA04AC4093E5BFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LieChives/Pods-LieChives-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LieChives/Pods-LieChives-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LieChives/Pods-LieChives-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B6C906227A7E19900FB4F5B /* Sources */ = {
@@ -356,6 +425,7 @@
 		};
 		3B6C908327A7E19B00FB4F5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B2CF6D33EE3D937A7EA1289 /* Pods-LieChives.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -384,6 +454,7 @@
 		};
 		3B6C908427A7E19B00FB4F5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C27940B218BB7F49B786F66 /* Pods-LieChives.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

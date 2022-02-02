@@ -9,6 +9,11 @@
 
 #import "JFPresentTimeBackgroundView.h"
 #import "JFRoomsBackgroundView.h"
+
+#import "JFKitchenTableViewController.h"
+#import "JFLivingroomTableViewController.h"
+#import "JFBedroomTableViewController.h"
+#import "JFBathroomTableViewController.h"
 @interface JFHomeViewController ()
 
 ///大的presentTimeBackgroundView里面有两个View，两个View里面再有其他控件
@@ -92,18 +97,25 @@
 # pragma mark - 点击事件
 - (void)kitchenBtnClick:(UIButton *)kitchenBtn{
     NSLog(@"点了厨房");
+    [self.navigationController pushViewController:[JFKitchenTableViewController new] animated:YES];
 }
 
 - (void)livingroomBtnClick:(UIButton *)livingroomBtn{
     NSLog(@"点了客厅");
+    [self.navigationController pushViewController:[JFLivingroomTableViewController new] animated:YES];
+
 }
 
 - (void)bedroomBtnClick:(UIButton *)bedroomBtn{
     NSLog(@"点了卧室");
+    [self.navigationController pushViewController:[JFBedroomTableViewController new] animated:YES];
+
 }
 
 - (void)bathroomBtnClick:(UIButton *)bathroomBtn{
     NSLog(@"点了卫生间");
+    [self.navigationController pushViewController:[JFBathroomTableViewController new] animated:YES];
+
 }
 
 # pragma mark - 懒加载

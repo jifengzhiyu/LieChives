@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3B5E37D027AA28F900475A3D /* JFPresentTimeBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E37CF27AA28F900475A3D /* JFPresentTimeBackgroundView.m */; };
 		3B5E37D427AA7FF900475A3D /* JFRoomsBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E37D327AA7FF800475A3D /* JFRoomsBackgroundView.m */; };
+		3B5E37D827AAD4E900475A3D /* JFKitchenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E37D727AAD4E900475A3D /* JFKitchenTableViewController.m */; };
+		3B5E37DB27AAD50300475A3D /* JFLivingroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E37DA27AAD50300475A3D /* JFLivingroomTableViewController.m */; };
+		3B5E37DE27AAD50F00475A3D /* JFBedroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E37DD27AAD50F00475A3D /* JFBedroomTableViewController.m */; };
+		3B5E37E127AAD51D00475A3D /* JFBathroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E37E027AAD51D00475A3D /* JFBathroomTableViewController.m */; };
 		3B6C906B27A7E19900FB4F5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C906A27A7E19900FB4F5B /* AppDelegate.m */; };
 		3B6C906E27A7E19900FB4F5B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C906D27A7E19900FB4F5B /* SceneDelegate.m */; };
 		3B6C907727A7E19900FB4F5B /* LieChives.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C907527A7E19900FB4F5B /* LieChives.xcdatamodeld */; };
@@ -29,6 +33,14 @@
 		3B5E37D127AA343F00475A3D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3B5E37D227AA7FF800475A3D /* JFRoomsBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFRoomsBackgroundView.h; sourceTree = "<group>"; };
 		3B5E37D327AA7FF800475A3D /* JFRoomsBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFRoomsBackgroundView.m; sourceTree = "<group>"; };
+		3B5E37D627AAD4E900475A3D /* JFKitchenTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFKitchenTableViewController.h; sourceTree = "<group>"; };
+		3B5E37D727AAD4E900475A3D /* JFKitchenTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFKitchenTableViewController.m; sourceTree = "<group>"; };
+		3B5E37D927AAD50200475A3D /* JFLivingroomTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFLivingroomTableViewController.h; sourceTree = "<group>"; };
+		3B5E37DA27AAD50300475A3D /* JFLivingroomTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFLivingroomTableViewController.m; sourceTree = "<group>"; };
+		3B5E37DC27AAD50F00475A3D /* JFBedroomTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFBedroomTableViewController.h; sourceTree = "<group>"; };
+		3B5E37DD27AAD50F00475A3D /* JFBedroomTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFBedroomTableViewController.m; sourceTree = "<group>"; };
+		3B5E37DF27AAD51C00475A3D /* JFBathroomTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFBathroomTableViewController.h; sourceTree = "<group>"; };
+		3B5E37E027AAD51D00475A3D /* JFBathroomTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFBathroomTableViewController.m; sourceTree = "<group>"; };
 		3B6C906627A7E19900FB4F5B /* LieChives.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LieChives.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6C906927A7E19900FB4F5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3B6C906A27A7E19900FB4F5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -74,6 +86,21 @@
 				3C27940B218BB7F49B786F66 /* Pods-LieChives.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3B5E37D527AAD49C00475A3D /* roomsTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3B5E37D627AAD4E900475A3D /* JFKitchenTableViewController.h */,
+				3B5E37D727AAD4E900475A3D /* JFKitchenTableViewController.m */,
+				3B5E37D927AAD50200475A3D /* JFLivingroomTableViewController.h */,
+				3B5E37DA27AAD50300475A3D /* JFLivingroomTableViewController.m */,
+				3B5E37DC27AAD50F00475A3D /* JFBedroomTableViewController.h */,
+				3B5E37DD27AAD50F00475A3D /* JFBedroomTableViewController.m */,
+				3B5E37DF27AAD51C00475A3D /* JFBathroomTableViewController.h */,
+				3B5E37E027AAD51D00475A3D /* JFBathroomTableViewController.m */,
+			);
+			name = roomsTableViewController;
 			sourceTree = "<group>";
 		};
 		3B6C905D27A7E19900FB4F5B = {
@@ -137,6 +164,7 @@
 		3B6D7BE127A81F800044F44E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3B5E37D527AAD49C00475A3D /* roomsTableViewController */,
 				3B6D7BD227A801C40044F44E /* JFHomeViewController.h */,
 				3B6D7BD327A801C40044F44E /* JFHomeViewController.m */,
 				3B5E37CE27AA28F900475A3D /* JFPresentTimeBackgroundView.h */,
@@ -300,12 +328,16 @@
 				3B6D7BE727A83CA20044F44E /* JFTipsTableViewController.m in Sources */,
 				3B6C906B27A7E19900FB4F5B /* AppDelegate.m in Sources */,
 				3B6D7BD427A801C40044F44E /* JFHomeViewController.m in Sources */,
+				3B5E37DE27AAD50F00475A3D /* JFBedroomTableViewController.m in Sources */,
+				3B5E37E127AAD51D00475A3D /* JFBathroomTableViewController.m in Sources */,
 				3B6D7BDE27A81D970044F44E /* JFMainViewController.m in Sources */,
 				3B6D7BF027A8430E0044F44E /* JFSettingTableViewController.m in Sources */,
 				3B6C907727A7E19900FB4F5B /* LieChives.xcdatamodeld in Sources */,
 				3B5E37D427AA7FF900475A3D /* JFRoomsBackgroundView.m in Sources */,
+				3B5E37DB27AAD50300475A3D /* JFLivingroomTableViewController.m in Sources */,
 				3B6C906E27A7E19900FB4F5B /* SceneDelegate.m in Sources */,
 				3B6D7BED27A842FD0044F44E /* JFGrowViewController.m in Sources */,
+				3B5E37D827AAD4E900475A3D /* JFKitchenTableViewController.m in Sources */,
 				3B5E37D027AA28F900475A3D /* JFPresentTimeBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

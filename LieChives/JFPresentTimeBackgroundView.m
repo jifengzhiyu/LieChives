@@ -130,7 +130,7 @@
 - (UIView *)presentTimeView{
     if(!_presentTimeView){
         _presentTimeView = [UIView new];
-        _presentTimeView.backgroundColor = [UIColor colorWithRed:211 / 255.0 green:251 / 255.0 blue:226 / 255.0 alpha:1];
+        _presentTimeView.backgroundColor = myColorLightGreen;
 
     }
     return _presentTimeView;

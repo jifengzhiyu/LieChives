@@ -56,7 +56,7 @@
     
     //厨房客厅卫生间卧室按钮的容器view
     //测试自动布局 颜色设置
-    self.roomsBackgroundView.backgroundColor = [UIColor colorWithRed:119 / 255.0 green:192 / 255.0 blue:178 / 255.0 alpha:1];
+    self.roomsBackgroundView.backgroundColor = myColorDarkGreen;
     
     //添加子视图
     [self.view addSubview:self.roomsBackgroundView];

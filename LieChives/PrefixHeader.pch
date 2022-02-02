@@ -12,6 +12,9 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import "Masonry.h"
 
+#define myColorLightGreen [UIColor colorWithRed:211 / 255.0 green:251 / 255.0 blue:226 / 255.0 alpha:1]
+
+#define myColorDarkGreen [UIColor colorWithRed:119 / 255.0 green:192 / 255.0 blue:178 / 255.0 alpha:1]
 
 
 #endif /* PrefixHeader_pch */

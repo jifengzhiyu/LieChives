@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5E37D027AA28F900475A3D /* JFPresentTimeBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E37CF27AA28F900475A3D /* JFPresentTimeBackgroundView.m */; };
 		3B6C906B27A7E19900FB4F5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C906A27A7E19900FB4F5B /* AppDelegate.m */; };
 		3B6C906E27A7E19900FB4F5B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C906D27A7E19900FB4F5B /* SceneDelegate.m */; };
 		3B6C907727A7E19900FB4F5B /* LieChives.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C907527A7E19900FB4F5B /* LieChives.xcdatamodeld */; };
@@ -22,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B5E37CE27AA28F900475A3D /* JFPresentTimeBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFPresentTimeBackgroundView.h; sourceTree = "<group>"; };
+		3B5E37CF27AA28F900475A3D /* JFPresentTimeBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFPresentTimeBackgroundView.m; sourceTree = "<group>"; };
+		3B5E37D127AA343F00475A3D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3B6C906627A7E19900FB4F5B /* LieChives.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LieChives.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6C906927A7E19900FB4F5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3B6C906A27A7E19900FB4F5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				3B6C907D27A7E19B00FB4F5B /* Info.plist */,
 				3B6C907E27A7E19B00FB4F5B /* main.m */,
 				3B6C907527A7E19900FB4F5B /* LieChives.xcdatamodeld */,
+				3B5E37D127AA343F00475A3D /* PrefixHeader.pch */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -131,6 +136,8 @@
 			children = (
 				3B6D7BD227A801C40044F44E /* JFHomeViewController.h */,
 				3B6D7BD327A801C40044F44E /* JFHomeViewController.m */,
+				3B5E37CE27AA28F900475A3D /* JFPresentTimeBackgroundView.h */,
+				3B5E37CF27AA28F900475A3D /* JFPresentTimeBackgroundView.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -293,6 +300,7 @@
 				3B6C907727A7E19900FB4F5B /* LieChives.xcdatamodeld in Sources */,
 				3B6C906E27A7E19900FB4F5B /* SceneDelegate.m in Sources */,
 				3B6D7BED27A842FD0044F44E /* JFGrowViewController.m in Sources */,
+				3B5E37D027AA28F900475A3D /* JFPresentTimeBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +360,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LieChives/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -410,6 +420,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LieChives/PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

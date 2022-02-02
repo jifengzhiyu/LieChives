@@ -22,21 +22,15 @@
 
 
 
-
-
-
-
-
-
-
 @end
 
 @implementation JFPresentTimeBackgroundView
 
-# pragma mark - 设置界面
+# pragma mark - initWithFrame（设置控件）
 - (instancetype)initWithFrame:(CGRect)frame{
+    //初始化
     self = [super initWithFrame:frame];
-    
+    //设置子控件
     [self setupSubView];
     
     return self;
@@ -45,7 +39,6 @@
 
 - (void)setupSubView{
     //添加时间容器view
-    //添加控件
     [self addSubview:self.presentTimeView];
     
     //设置自动布局
@@ -58,7 +51,7 @@
         
     }];
     
-    
+    //添加时间容器view子控件
     [self setupPresentTimeSubView];
     
     //添加次数容器view
@@ -74,6 +67,7 @@
         
     }];
     
+    //添加次数容器view子控件
     [self setupTimesView];
 }
 
@@ -113,6 +107,7 @@
 }
 
 # pragma mark - 懒加载
+///当前时间数组
 - (NSArray *)presentArr{
     if(!_presentArr){
         _presentArr = [NSArray array];
@@ -131,6 +126,7 @@
     return _presentArr;
 }
 
+////时间view容纳器
 - (UIView *)presentTimeView{
     if(!_presentTimeView){
         _presentTimeView = [UIView new];
@@ -167,6 +163,7 @@
     return _monthYearLbl;
 }
 
+///次数容纳器
 - (UIView *)timesView{
     if(!_timesView){
         _timesView = [UIView new];
@@ -175,6 +172,7 @@
     return _timesView;
 }
 
+///次数 label
 - (UILabel *)overTimesLbl{
     if(!_overTimesLbl){
         _overTimesLbl = [UILabel new];

@@ -101,6 +101,7 @@
 				3B6D7BE027A81F340044F44E /* View(视图和控制器) */,
 				3B6D7BDF27A81DA80044F44E /* Other */,
 				3B6D7BDC27A81D970044F44E /* JFMainViewController.h */,
+				3B6C907827A7E19B00FB4F5B /* Assets.xcassets */,
 				3B6D7BDD27A81D970044F44E /* JFMainViewController.m */,
 			);
 			path = LieChives;
@@ -113,7 +114,6 @@
 				3B6C906A27A7E19900FB4F5B /* AppDelegate.m */,
 				3B6C906C27A7E19900FB4F5B /* SceneDelegate.h */,
 				3B6C906D27A7E19900FB4F5B /* SceneDelegate.m */,
-				3B6C907827A7E19B00FB4F5B /* Assets.xcassets */,
 				3B6C907A27A7E19B00FB4F5B /* LaunchScreen.storyboard */,
 				3B6C907D27A7E19B00FB4F5B /* Info.plist */,
 				3B6C907E27A7E19B00FB4F5B /* main.m */,

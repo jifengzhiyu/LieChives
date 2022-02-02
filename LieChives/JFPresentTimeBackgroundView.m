@@ -31,13 +31,13 @@
     //初始化
     self = [super initWithFrame:frame];
     //设置子控件
-    [self setupSubView];
+    [self setupSubViews];
     
     return self;
 }
 
 
-- (void)setupSubView{
+- (void)setupSubViews{
     //添加时间容器view
     [self addSubview:self.presentTimeView];
     

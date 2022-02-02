@@ -56,7 +56,7 @@
     
     //厨房客厅卫生间卧室按钮的容器view
     //测试自动布局 颜色设置
-    self.roomsBackgroundView.backgroundColor = [UIColor grayColor];
+    self.roomsBackgroundView.backgroundColor = [UIColor colorWithRed:119 / 255.0 green:192 / 255.0 blue:178 / 255.0 alpha:1];
     
     //添加子视图
     [self.view addSubview:self.roomsBackgroundView];
@@ -64,8 +64,10 @@
     //设置自动布局
     [self.roomsBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.view.mas_centerX);
-            make.width.mas_equalTo(320);
-            make.height.mas_equalTo(180 * 2 + 50);
+        //3是房间按钮内部距离
+        //4        外部
+            make.width.mas_equalTo(320 + 4 * 2 + 3);
+            make.height.mas_equalTo(180 * 2 + 4 * 2 + 3);
             make.top.equalTo(self.presentTimeBackgroundView.mas_bottom).offset(50);
     }];
 
@@ -87,7 +89,9 @@
 }
 
 
-
+- (void)kitchenBtnClick:(UIButton *)kitchenBtn{
+    NSLog(@"点了厨房");
+}
 /*
 #pragma mark - Navigation
 

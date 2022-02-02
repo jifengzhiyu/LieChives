@@ -70,7 +70,40 @@
             make.height.mas_equalTo(180 * 2 + 4 * 2 + 3);
             make.top.equalTo(self.presentTimeBackgroundView.mas_bottom).offset(50);
     }];
+    
+    [self addRoomsBtnClick];
 
+}
+
+///添加房间按钮的监听方法
+- (void)addRoomsBtnClick{
+    
+    [self.roomsBackgroundView.kitchenBtn addTarget:self action:@selector(kitchenBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.roomsBackgroundView.livingroomBtn addTarget:self action:@selector(livingroomBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.roomsBackgroundView.bedroomBtn addTarget:self action:@selector(bedroomBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.roomsBackgroundView.bathroomBtn addTarget:self action:@selector(bathroomBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+}
+
+# pragma mark - 点击事件
+- (void)kitchenBtnClick:(UIButton *)kitchenBtn{
+    NSLog(@"点了厨房");
+}
+
+- (void)livingroomBtnClick:(UIButton *)livingroomBtn{
+    NSLog(@"点了客厅");
+}
+
+- (void)bedroomBtnClick:(UIButton *)bedroomBtn{
+    NSLog(@"点了卧室");
+}
+
+- (void)bathroomBtnClick:(UIButton *)bathroomBtn{
+    NSLog(@"点了卫生间");
 }
 
 # pragma mark - 懒加载
@@ -89,9 +122,7 @@
 }
 
 
-- (void)kitchenBtnClick:(UIButton *)kitchenBtn{
-    NSLog(@"点了厨房");
-}
+
 /*
 #pragma mark - Navigation
 

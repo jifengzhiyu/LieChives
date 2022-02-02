@@ -7,11 +7,7 @@
 
 #import "JFRoomsBackgroundView.h"
 @interface JFRoomsBackgroundView()
-//四个房间的按钮
-@property (nonatomic, strong) UIButton *kitchenBtn;
-@property (nonatomic, strong) UIButton *livingroomBtn;
-@property (nonatomic, strong) UIButton *bedroomBtn;
-@property (nonatomic, strong) UIButton *bathroomBtn;
+
 
 
 //四个房间的标签

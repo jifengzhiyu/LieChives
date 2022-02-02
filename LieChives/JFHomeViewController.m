@@ -53,12 +53,23 @@
     
     //日期
     
-    //获取时间
+    //获取现在时间
+    NSDate *presentDate = [NSDate date];
+    // 创建一个时间格式化对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"YYYY:MM:dd"];
+//    dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_CN"];
+    NSString *presentDateString = [dateFormatter stringFromDate:presentDate];
+    NSArray *presentArr = [presentDateString componentsSeparatedByString:@":"];
+//    NSLog(@"%@",presentArr);
+    NSString *dateText = presentArr[2];
+    NSString *monthYearText = [NSString stringWithFormat:@"%@月%@年",presentArr[1],presentArr[0]];
     
+    NSLog(@"%@",presentDateString);
     
     //日 label
     UILabel *dateLbl = [UILabel new];
-    NSString *dateText = @"31";
     
     //富文本设置
     NSMutableParagraphStyle *dateParagraphStyle = [NSMutableParagraphStyle new];
@@ -76,7 +87,6 @@
     
     //月 年 label
     UILabel *monthYearLbl = [UILabel new];
-    NSString *monthYearText = @"12月2022年";
     
     //富文本设置（大小，居中）
     NSMutableParagraphStyle *monthYearParagraphStyle = [NSMutableParagraphStyle new];
@@ -91,6 +101,7 @@
             make.top.mas_equalTo(dateLbl.mas_bottom).offset(5);
             
     }];
+    
     
     
     //次数容纳器

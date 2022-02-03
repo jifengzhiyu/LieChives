@@ -6,7 +6,7 @@
 //
 
 #import "JFKitchenTableViewController.h"
-
+#import "Kitchen+CoreDataClass.h"
 @interface JFKitchenTableViewController ()
 
 @end
@@ -21,6 +21,18 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //通过实体描述描述出实体对象
+  Kitchen *kitchen =  [NSEntityDescription insertNewObjectForEntityForName:@"Kitchen" inManagedObjectContext:[JFCoreDataManager sharedManager].managerContext];
+
+    
+    //数据存储插入操作  KVC
+//    [person setValue:@"leo" forKey:@"name"];
+    kitchen.gongZuoTai = 0;
+    kitchen.zaoTai = 1;
+    
+    //通过上下文进行提交存储
+    [[JFCoreDataManager sharedManager].managerContext save:nil];
 }
 
 #pragma mark - Table view data source

@@ -37,8 +37,9 @@ static JFCoreDataManager *sharemanager;
         
         //数据路径一般放在沙盒
         NSString *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+        NSString *filePath = [docPath stringByAppendingPathComponent:@"LieChives.db"];
 //        NSURL *file = [NSURL fileURLWithPath:@"/Users/kaixin/Desktop/person/person.db"];
-        NSURL *file = [NSURL fileURLWithPath: docPath];
+        NSURL *file = [NSURL fileURLWithPath: filePath];
         
         //添加数据库文件路径
         [per addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:file options:nil error:nil];

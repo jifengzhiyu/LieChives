@@ -32,6 +32,7 @@
 		3BF723E827AB889B007820CE /* Bedroom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723DE27AB889B007820CE /* Bedroom+CoreDataProperties.m */; };
 		3BF723E927AB889B007820CE /* Bathroom+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723E127AB889B007820CE /* Bathroom+CoreDataClass.m */; };
 		3BF723EA27AB889B007820CE /* Bathroom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723E227AB889B007820CE /* Bathroom+CoreDataProperties.m */; };
+		3BF723ED27AB8BCF007820CE /* JFCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723EC27AB8BCF007820CE /* JFCoreDataManager.m */; };
 		44646EDC0E251BEE79036CAA /* Pods_LieChives.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5503D4E27BB999334BEF3A /* Pods_LieChives.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,8 @@
 		3BF723E027AB889B007820CE /* Bathroom+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bathroom+CoreDataClass.h"; sourceTree = "<group>"; };
 		3BF723E127AB889B007820CE /* Bathroom+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Bathroom+CoreDataClass.m"; sourceTree = "<group>"; };
 		3BF723E227AB889B007820CE /* Bathroom+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Bathroom+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3BF723EB27AB8BCF007820CE /* JFCoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFCoreDataManager.h; sourceTree = "<group>"; };
+		3BF723EC27AB8BCF007820CE /* JFCoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFCoreDataManager.m; sourceTree = "<group>"; };
 		3C27940B218BB7F49B786F66 /* Pods-LieChives.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LieChives.release.xcconfig"; path = "Target Support Files/Pods-LieChives/Pods-LieChives.release.xcconfig"; sourceTree = "<group>"; };
 		4B2CF6D33EE3D937A7EA1289 /* Pods-LieChives.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LieChives.debug.xcconfig"; path = "Target Support Files/Pods-LieChives/Pods-LieChives.debug.xcconfig"; sourceTree = "<group>"; };
 		5B5503D4E27BB999334BEF3A /* Pods_LieChives.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LieChives.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,12 +152,12 @@
 		3B6C906827A7E19900FB4F5B /* LieChives */ = {
 			isa = PBXGroup;
 			children = (
+				3BF723F027AB8F5D007820CE /* Tools */,
 				3B6D7BE027A81F340044F44E /* View(视图和控制器) */,
 				3B6D7BDF27A81DA80044F44E /* Other */,
 				3B6D7BDC27A81D970044F44E /* JFMainViewController.h */,
 				3B6D7BDD27A81D970044F44E /* JFMainViewController.m */,
 				3B6C907827A7E19B00FB4F5B /* Assets.xcassets */,
-				3BF723D227AB8813007820CE /* Tools */,
 			);
 			path = LieChives;
 			sourceTree = "<group>";
@@ -169,8 +172,6 @@
 				3B6C907A27A7E19B00FB4F5B /* LaunchScreen.storyboard */,
 				3B6C907D27A7E19B00FB4F5B /* Info.plist */,
 				3B6C907E27A7E19B00FB4F5B /* main.m */,
-				3B6C907527A7E19900FB4F5B /* LieChives.xcdatamodeld */,
-				3B5E37D127AA343F00475A3D /* PrefixHeader.pch */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -227,9 +228,11 @@
 			name = Setting;
 			sourceTree = "<group>";
 		};
-		3BF723D227AB8813007820CE /* Tools */ = {
+		3BF723F027AB8F5D007820CE /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3B5E37D127AA343F00475A3D /* PrefixHeader.pch */,
+				3B6C907527A7E19900FB4F5B /* LieChives.xcdatamodeld */,
 				3BF723D327AB889B007820CE /* Kitchen+CoreDataProperties.h */,
 				3BF723D427AB889B007820CE /* Kitchen+CoreDataClass.h */,
 				3BF723D527AB889B007820CE /* Kitchen+CoreDataClass.m */,
@@ -246,9 +249,10 @@
 				3BF723E027AB889B007820CE /* Bathroom+CoreDataClass.h */,
 				3BF723E127AB889B007820CE /* Bathroom+CoreDataClass.m */,
 				3BF723E227AB889B007820CE /* Bathroom+CoreDataProperties.m */,
+				3BF723EB27AB8BCF007820CE /* JFCoreDataManager.h */,
+				3BF723EC27AB8BCF007820CE /* JFCoreDataManager.m */,
 			);
 			name = Tools;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		DE54C3440FB2BCE3C2CE80F0 /* Frameworks */ = {
@@ -385,6 +389,7 @@
 				3B6D7BDE27A81D970044F44E /* JFMainViewController.m in Sources */,
 				3BF723E827AB889B007820CE /* Bedroom+CoreDataProperties.m in Sources */,
 				3B6D7BF027A8430E0044F44E /* JFSettingTableViewController.m in Sources */,
+				3BF723ED27AB8BCF007820CE /* JFCoreDataManager.m in Sources */,
 				3BF723E927AB889B007820CE /* Bathroom+CoreDataClass.m in Sources */,
 				3B6C907727A7E19900FB4F5B /* LieChives.xcdatamodeld in Sources */,
 				3B5E37D427AA7FF900475A3D /* JFRoomsBackgroundView.m in Sources */,

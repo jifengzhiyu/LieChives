@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL shuiChi;
 @property (nonatomic) BOOL zaoTai;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

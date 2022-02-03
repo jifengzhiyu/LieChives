@@ -1,4 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21D49" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Bathroom" representedClassName="Bathroom" syncable="YES" codeGenerationType="class">
+        <attribute name="maoJinJia" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="shuiChi" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="xiYuWeiShengYongPinJiaZi" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="yuGang" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Bedroom" representedClassName="Bedroom" syncable="YES" codeGenerationType="class">
+        <attribute name="chuang" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="chuangTouGui" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="chuWuGui" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="men" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="qiangBi" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="shuGui" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="xueXiZhuo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="yangTai" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="yiGui" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Kitchen" representedClassName="Kitchen" syncable="YES" codeGenerationType="class">
+        <attribute name="chuGui" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="gongZuoTai" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="shuiChi" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="zaoTai" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Livingroom" representedClassName="Livingroom" syncable="YES" codeGenerationType="class">
+        <attribute name="bingXiang" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="canZhuo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="chaJi" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="chuWuGui" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="dianShiGui" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="qiangBi" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="shaFa" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="shuGui" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="xieGui" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="Kitchen" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Livingroom" positionX="-54" positionY="18" width="128" height="164"/>
+        <element name="Bedroom" positionX="-36" positionY="90" width="128" height="164"/>
+        <element name="Bathroom" positionX="-18" positionY="135" width="128" height="89"/>
+    </elements>
 </model>

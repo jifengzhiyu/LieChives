@@ -128,8 +128,8 @@
 				3B6D7BE027A81F340044F44E /* View(视图和控制器) */,
 				3B6D7BDF27A81DA80044F44E /* Other */,
 				3B6D7BDC27A81D970044F44E /* JFMainViewController.h */,
-				3B6C907827A7E19B00FB4F5B /* Assets.xcassets */,
 				3B6D7BDD27A81D970044F44E /* JFMainViewController.m */,
+				3B6C907827A7E19B00FB4F5B /* Assets.xcassets */,
 			);
 			path = LieChives;
 			sourceTree = "<group>";

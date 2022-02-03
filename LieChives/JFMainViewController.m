@@ -45,7 +45,7 @@
     viewController.view.backgroundColor = [UIColor whiteColor];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
     [self addChildViewController:nav];
-    
+    nav.navigationBar.tintColor = [UIColor systemGreenColor];
     
 }
 

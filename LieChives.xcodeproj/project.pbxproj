@@ -24,6 +24,14 @@
 		3B6D7BE727A83CA20044F44E /* JFTipsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BE627A83CA20044F44E /* JFTipsTableViewController.m */; };
 		3B6D7BED27A842FD0044F44E /* JFGrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BEC27A842FD0044F44E /* JFGrowViewController.m */; };
 		3B6D7BF027A8430E0044F44E /* JFSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D7BEF27A8430E0044F44E /* JFSettingTableViewController.m */; };
+		3BF723E327AB889B007820CE /* Kitchen+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723D527AB889B007820CE /* Kitchen+CoreDataClass.m */; };
+		3BF723E427AB889B007820CE /* Kitchen+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723D627AB889B007820CE /* Kitchen+CoreDataProperties.m */; };
+		3BF723E527AB889B007820CE /* Livingroom+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723D927AB889B007820CE /* Livingroom+CoreDataClass.m */; };
+		3BF723E627AB889B007820CE /* Livingroom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723DA27AB889B007820CE /* Livingroom+CoreDataProperties.m */; };
+		3BF723E727AB889B007820CE /* Bedroom+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723DD27AB889B007820CE /* Bedroom+CoreDataClass.m */; };
+		3BF723E827AB889B007820CE /* Bedroom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723DE27AB889B007820CE /* Bedroom+CoreDataProperties.m */; };
+		3BF723E927AB889B007820CE /* Bathroom+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723E127AB889B007820CE /* Bathroom+CoreDataClass.m */; };
+		3BF723EA27AB889B007820CE /* Bathroom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723E227AB889B007820CE /* Bathroom+CoreDataProperties.m */; };
 		44646EDC0E251BEE79036CAA /* Pods_LieChives.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5503D4E27BB999334BEF3A /* Pods_LieChives.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +70,22 @@
 		3B6D7BEC27A842FD0044F44E /* JFGrowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFGrowViewController.m; sourceTree = "<group>"; };
 		3B6D7BEE27A8430E0044F44E /* JFSettingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFSettingTableViewController.h; sourceTree = "<group>"; };
 		3B6D7BEF27A8430E0044F44E /* JFSettingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFSettingTableViewController.m; sourceTree = "<group>"; };
+		3BF723D327AB889B007820CE /* Kitchen+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kitchen+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3BF723D427AB889B007820CE /* Kitchen+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kitchen+CoreDataClass.h"; sourceTree = "<group>"; };
+		3BF723D527AB889B007820CE /* Kitchen+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Kitchen+CoreDataClass.m"; sourceTree = "<group>"; };
+		3BF723D627AB889B007820CE /* Kitchen+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Kitchen+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3BF723D727AB889B007820CE /* Livingroom+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Livingroom+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3BF723D827AB889B007820CE /* Livingroom+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Livingroom+CoreDataClass.h"; sourceTree = "<group>"; };
+		3BF723D927AB889B007820CE /* Livingroom+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Livingroom+CoreDataClass.m"; sourceTree = "<group>"; };
+		3BF723DA27AB889B007820CE /* Livingroom+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Livingroom+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3BF723DB27AB889B007820CE /* Bedroom+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bedroom+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3BF723DC27AB889B007820CE /* Bedroom+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bedroom+CoreDataClass.h"; sourceTree = "<group>"; };
+		3BF723DD27AB889B007820CE /* Bedroom+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Bedroom+CoreDataClass.m"; sourceTree = "<group>"; };
+		3BF723DE27AB889B007820CE /* Bedroom+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Bedroom+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3BF723DF27AB889B007820CE /* Bathroom+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bathroom+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3BF723E027AB889B007820CE /* Bathroom+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bathroom+CoreDataClass.h"; sourceTree = "<group>"; };
+		3BF723E127AB889B007820CE /* Bathroom+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Bathroom+CoreDataClass.m"; sourceTree = "<group>"; };
+		3BF723E227AB889B007820CE /* Bathroom+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Bathroom+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3C27940B218BB7F49B786F66 /* Pods-LieChives.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LieChives.release.xcconfig"; path = "Target Support Files/Pods-LieChives/Pods-LieChives.release.xcconfig"; sourceTree = "<group>"; };
 		4B2CF6D33EE3D937A7EA1289 /* Pods-LieChives.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LieChives.debug.xcconfig"; path = "Target Support Files/Pods-LieChives/Pods-LieChives.debug.xcconfig"; sourceTree = "<group>"; };
 		5B5503D4E27BB999334BEF3A /* Pods_LieChives.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LieChives.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +154,7 @@
 				3B6D7BDC27A81D970044F44E /* JFMainViewController.h */,
 				3B6D7BDD27A81D970044F44E /* JFMainViewController.m */,
 				3B6C907827A7E19B00FB4F5B /* Assets.xcassets */,
+				3BF723D227AB8813007820CE /* Tools */,
 			);
 			path = LieChives;
 			sourceTree = "<group>";
@@ -200,6 +225,30 @@
 				3B6D7BEF27A8430E0044F44E /* JFSettingTableViewController.m */,
 			);
 			name = Setting;
+			sourceTree = "<group>";
+		};
+		3BF723D227AB8813007820CE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3BF723D327AB889B007820CE /* Kitchen+CoreDataProperties.h */,
+				3BF723D427AB889B007820CE /* Kitchen+CoreDataClass.h */,
+				3BF723D527AB889B007820CE /* Kitchen+CoreDataClass.m */,
+				3BF723D627AB889B007820CE /* Kitchen+CoreDataProperties.m */,
+				3BF723D727AB889B007820CE /* Livingroom+CoreDataProperties.h */,
+				3BF723D827AB889B007820CE /* Livingroom+CoreDataClass.h */,
+				3BF723D927AB889B007820CE /* Livingroom+CoreDataClass.m */,
+				3BF723DA27AB889B007820CE /* Livingroom+CoreDataProperties.m */,
+				3BF723DB27AB889B007820CE /* Bedroom+CoreDataProperties.h */,
+				3BF723DC27AB889B007820CE /* Bedroom+CoreDataClass.h */,
+				3BF723DD27AB889B007820CE /* Bedroom+CoreDataClass.m */,
+				3BF723DE27AB889B007820CE /* Bedroom+CoreDataProperties.m */,
+				3BF723DF27AB889B007820CE /* Bathroom+CoreDataProperties.h */,
+				3BF723E027AB889B007820CE /* Bathroom+CoreDataClass.h */,
+				3BF723E127AB889B007820CE /* Bathroom+CoreDataClass.m */,
+				3BF723E227AB889B007820CE /* Bathroom+CoreDataProperties.m */,
+			);
+			name = Tools;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		DE54C3440FB2BCE3C2CE80F0 /* Frameworks */ = {
@@ -327,17 +376,25 @@
 				3B6C907F27A7E19B00FB4F5B /* main.m in Sources */,
 				3B6D7BE727A83CA20044F44E /* JFTipsTableViewController.m in Sources */,
 				3B6C906B27A7E19900FB4F5B /* AppDelegate.m in Sources */,
+				3BF723E527AB889B007820CE /* Livingroom+CoreDataClass.m in Sources */,
 				3B6D7BD427A801C40044F44E /* JFHomeViewController.m in Sources */,
+				3BF723EA27AB889B007820CE /* Bathroom+CoreDataProperties.m in Sources */,
 				3B5E37DE27AAD50F00475A3D /* JFBedroomTableViewController.m in Sources */,
 				3B5E37E127AAD51D00475A3D /* JFBathroomTableViewController.m in Sources */,
+				3BF723E427AB889B007820CE /* Kitchen+CoreDataProperties.m in Sources */,
 				3B6D7BDE27A81D970044F44E /* JFMainViewController.m in Sources */,
+				3BF723E827AB889B007820CE /* Bedroom+CoreDataProperties.m in Sources */,
 				3B6D7BF027A8430E0044F44E /* JFSettingTableViewController.m in Sources */,
+				3BF723E927AB889B007820CE /* Bathroom+CoreDataClass.m in Sources */,
 				3B6C907727A7E19900FB4F5B /* LieChives.xcdatamodeld in Sources */,
 				3B5E37D427AA7FF900475A3D /* JFRoomsBackgroundView.m in Sources */,
 				3B5E37DB27AAD50300475A3D /* JFLivingroomTableViewController.m in Sources */,
 				3B6C906E27A7E19900FB4F5B /* SceneDelegate.m in Sources */,
+				3BF723E727AB889B007820CE /* Bedroom+CoreDataClass.m in Sources */,
+				3BF723E327AB889B007820CE /* Kitchen+CoreDataClass.m in Sources */,
 				3B6D7BED27A842FD0044F44E /* JFGrowViewController.m in Sources */,
 				3B5E37D827AAD4E900475A3D /* JFKitchenTableViewController.m in Sources */,
+				3BF723E627AB889B007820CE /* Livingroom+CoreDataProperties.m in Sources */,
 				3B5E37D027AA28F900475A3D /* JFPresentTimeBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

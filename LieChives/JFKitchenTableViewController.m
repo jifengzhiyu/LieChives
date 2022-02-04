@@ -20,48 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"厨房";
     
+    self.navigationItem.title = @"厨房";
     
     [self initKitchenData];
     
-//    [self upDateKichenData];
-    
-    [self fetchKitchenData];
-    
     
 }
 
-- (void)upDateKichenData{
-    NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
 
-    for (Kitchen *kitchen  in temp) {
-        kitchen.gongZuoTai = @(1);
-        kitchen.zaoTai = @(1);
-        kitchen.chuGui = @(1);
-        kitchen.shuiChi = @(1);
-        NSLog(@"%@--%@---%@---%@ 更新-----》一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
-    }
-    
-    //保存
-    NSError *error = nil;
-    if ([[JFCoreDataManager sharedManager].managerContext save:&error]) {
-        NSLog(@"更新数据成功");
-    }else{
-        NSLog(@"更新数据失败, %@", error);
-    }
-}
-
-- (void)fetchKitchenData{
-
-    NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
-
-    
-    //打印结果集
-    for (Kitchen *kitchen  in temp) {
-        NSLog(@"%@--%@---%@---%@ 一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
-    }
-}
 
 - (void)initKitchenData{
     //先获取一下

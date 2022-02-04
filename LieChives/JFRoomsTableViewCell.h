@@ -10,8 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JFRoomsTableViewCell : UITableViewCell
-///记录是否做了
-//@property (nonatomic, assign) NSInteger currentIndex;
+
 @end
 
 NS_ASSUME_NONNULL_END

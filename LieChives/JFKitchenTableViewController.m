@@ -8,13 +8,10 @@
 #import "JFKitchenTableViewController.h"
 #import "Kitchen+CoreDataClass.h"
 @interface JFKitchenTableViewController ()
+
 @property (nonatomic, strong) Kitchen *kitchen;
 ///kitchenPartArr记录cell的cell.textLabel.text
 @property (nonatomic, copy) NSArray *kitchenPartArr;
-///记录是否做了
-@property (nonatomic, assign) BOOL isChecked;
-
-@property (nonatomic, assign) NSIndexPath *currentIndex;
 
 
 @end
@@ -44,6 +41,14 @@
         kitchen.chuGui = @(1);
         kitchen.shuiChi = @(1);
         NSLog(@"%@--%@---%@---%@ 更新-----》一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
+    }
+    
+    //保存
+    NSError *error = nil;
+    if ([[JFCoreDataManager sharedManager].managerContext save:&error]) {
+        NSLog(@"更新数据成功");
+    }else{
+        NSLog(@"更新数据失败, %@", error);
     }
 }
 
@@ -114,7 +119,6 @@
         }
         NSLog(@"橱柜---load");
     }else if ([cell.textLabel.text  isEqual: @"工作台"]){
-//        self.kitchen.gongZuoTai = !self.kitchen.gongZuoTai;
         if(self.kitchen.gongZuoTai == nil || [self.kitchen.gongZuoTai  isEqual: @0]){
             cell.accessoryType = UITableViewCellAccessoryNone;
         }else{
@@ -122,7 +126,6 @@
         }
         NSLog(@"工作台---load");
     }else if ([cell.textLabel.text  isEqual: @"水池"]){
-//        self.kitchen.shuiChi = !self.kitchen.shuiChi;
         if(self.kitchen.shuiChi == nil || [self.kitchen.shuiChi  isEqual: @0]){
             cell.accessoryType = UITableViewCellAccessoryNone;
         }else{
@@ -130,7 +133,6 @@
         }
         NSLog(@"水池---load");
     }else if ([cell.textLabel.text  isEqual: @"灶台"]){
-//        self.kitchen.zaoTai = !self.kitchen.zaoTai;
         if(self.kitchen.zaoTai == nil || [self.kitchen.zaoTai  isEqual: @0]){
             cell.accessoryType = UITableViewCellAccessoryNone;
         }else{
@@ -152,21 +154,13 @@
 
 - (Kitchen *)kitchen{
     if(!_kitchen){
-//        _kitchen = [Kitchen new];
         //获取数据
         NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
         _kitchen = (Kitchen *)temp[0];
-        NSLog(@"%@",_kitchen);
-        //打印结果集
-//        for (Kitchen *kitchen  in temp) {
-//            NSLog(@"%@--%@---%@---%@ 一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
-//            _kitchen.gongZuoTai = kitchen.gongZuoTai;
-//            _kitchen.zaoTai = kitchen.zaoTai;
-//            _kitchen.shuiChi = kitchen.shuiChi;
-//            _kitchen.chuGui = kitchen.chuGui;
-//        }
 
     }
+    NSLog(@"_kitchen --- %@",_kitchen);
+
     return _kitchen;
 }
 
@@ -208,15 +202,24 @@
     NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
 
     for (Kitchen *kitchen  in temp) {
+        NSLog(@"更新数据%@--%@---%@---%@ 更新 前-----》一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
+
         kitchen.gongZuoTai = self.kitchen.gongZuoTai;
         kitchen.zaoTai = self.kitchen.zaoTai;
         kitchen.chuGui = self.kitchen.chuGui;
         kitchen.shuiChi = self.kitchen.shuiChi;
-//        NSLog(@"%@--%@---%@---%@ 更新-----》一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
+        NSLog(@"更新数据%@--%@---%@---%@ 更新 后-----》一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
+    }
+    
+    //保存
+    NSError *error = nil;
+    if ([[JFCoreDataManager sharedManager].managerContext save:&error]) {
+        NSLog(@"更新数据成功");
+    }else{
+        NSLog(@"更新数据失败, %@", error);
     }
         
 
-//    self.currentIndex = indexPath;
     [self.tableView reloadData];
 }
 

@@ -152,11 +152,19 @@
 
 - (Kitchen *)kitchen{
     if(!_kitchen){
-        _kitchen = [Kitchen new];
-//        _kitchen.chuGui = [NSNumber numberWithInteger:0];
-//        _kitchen.gongZuoTai = @0;
-//        _kitchen.shuiChi = @0;
-//        _kitchen.zaoTai = @0;
+//        _kitchen = [Kitchen new];
+        //获取数据
+        NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
+        _kitchen = (Kitchen *)temp[0];
+        NSLog(@"%@",_kitchen);
+        //打印结果集
+//        for (Kitchen *kitchen  in temp) {
+//            NSLog(@"%@--%@---%@---%@ 一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
+//            _kitchen.gongZuoTai = kitchen.gongZuoTai;
+//            _kitchen.zaoTai = kitchen.zaoTai;
+//            _kitchen.shuiChi = kitchen.shuiChi;
+//            _kitchen.chuGui = kitchen.chuGui;
+//        }
 
     }
     return _kitchen;
@@ -194,6 +202,17 @@
             self.kitchen.zaoTai = @0;
         }
         NSLog(@"灶台");
+    }
+    
+    //更新数据库
+    NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
+
+    for (Kitchen *kitchen  in temp) {
+        kitchen.gongZuoTai = self.kitchen.gongZuoTai;
+        kitchen.zaoTai = self.kitchen.zaoTai;
+        kitchen.chuGui = self.kitchen.chuGui;
+        kitchen.shuiChi = self.kitchen.shuiChi;
+//        NSLog(@"%@--%@---%@---%@ 更新-----》一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
     }
         
 

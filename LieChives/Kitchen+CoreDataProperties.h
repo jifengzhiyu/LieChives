@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *gongZuoTai;
 @property (nullable, nonatomic, retain) NSNumber *shuiChi;
 @property (nullable, nonatomic, retain) NSNumber *zaoTai;
+@property (nullable, nonatomic, retain) NSNumber *finishedCount;
 
 
 @end

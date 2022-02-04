@@ -24,4 +24,7 @@
 @dynamic yangTai;
 @dynamic yiGui;
 
+@dynamic finishedCount;
+
+
 @end

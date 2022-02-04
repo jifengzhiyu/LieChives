@@ -18,6 +18,7 @@
 @dynamic gongZuoTai;
 @dynamic shuiChi;
 @dynamic zaoTai;
+
 @dynamic finishedCount;
 
 

@@ -24,4 +24,7 @@
 @dynamic shuGui;
 @dynamic xieGui;
 
+@dynamic finishedCount;
+
+
 @end

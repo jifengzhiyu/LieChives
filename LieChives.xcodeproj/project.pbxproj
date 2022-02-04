@@ -121,13 +121,10 @@
 		3B5E37D527AAD49C00475A3D /* roomsTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3BF723F127ABE2DC007820CE /* kitchen */,
-				3B5E37D927AAD50200475A3D /* JFLivingroomTableViewController.h */,
-				3B5E37DA27AAD50300475A3D /* JFLivingroomTableViewController.m */,
-				3B5E37DC27AAD50F00475A3D /* JFBedroomTableViewController.h */,
-				3B5E37DD27AAD50F00475A3D /* JFBedroomTableViewController.m */,
-				3B5E37DF27AAD51C00475A3D /* JFBathroomTableViewController.h */,
-				3B5E37E027AAD51D00475A3D /* JFBathroomTableViewController.m */,
+				3BF723F127ABE2DC007820CE /* kitchenTableViewController */,
+				3BF7242727AD5FD0007820CE /* livingroomTableViewController */,
+				3BF7242827AD5FDF007820CE /* bedroomTableViewController */,
+				3BF7242927AD5FE8007820CE /* bathroomTableViewController */,
 			);
 			name = roomsTableViewController;
 			sourceTree = "<group>";
@@ -235,37 +232,96 @@
 		3BF723F027AB8F5D007820CE /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3BF7242327AD5F5E007820CE /* kitchenCoreDataModel */,
+				3BF7242427AD5F7B007820CE /* livingroomCoreDataModel */,
+				3BF7242527AD5F94007820CE /* bedroomCoreDataModel */,
+				3BF7242627AD5FA1007820CE /* bathroomCoreDataModel */,
 				3B5E37D127AA343F00475A3D /* PrefixHeader.pch */,
 				3B6C907527A7E19900FB4F5B /* LieChives.xcdatamodeld */,
-				3BF723D327AB889B007820CE /* Kitchen+CoreDataProperties.h */,
-				3BF723D427AB889B007820CE /* Kitchen+CoreDataClass.h */,
-				3BF723D527AB889B007820CE /* Kitchen+CoreDataClass.m */,
-				3BF723D627AB889B007820CE /* Kitchen+CoreDataProperties.m */,
-				3BF723D727AB889B007820CE /* Livingroom+CoreDataProperties.h */,
-				3BF723D827AB889B007820CE /* Livingroom+CoreDataClass.h */,
-				3BF723D927AB889B007820CE /* Livingroom+CoreDataClass.m */,
-				3BF723DA27AB889B007820CE /* Livingroom+CoreDataProperties.m */,
-				3BF723DB27AB889B007820CE /* Bedroom+CoreDataProperties.h */,
-				3BF723DC27AB889B007820CE /* Bedroom+CoreDataClass.h */,
-				3BF723DD27AB889B007820CE /* Bedroom+CoreDataClass.m */,
-				3BF723DE27AB889B007820CE /* Bedroom+CoreDataProperties.m */,
-				3BF723DF27AB889B007820CE /* Bathroom+CoreDataProperties.h */,
-				3BF723E027AB889B007820CE /* Bathroom+CoreDataClass.h */,
-				3BF723E127AB889B007820CE /* Bathroom+CoreDataClass.m */,
-				3BF723E227AB889B007820CE /* Bathroom+CoreDataProperties.m */,
 				3BF723EB27AB8BCF007820CE /* JFCoreDataManager.h */,
 				3BF723EC27AB8BCF007820CE /* JFCoreDataManager.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
 		};
-		3BF723F127ABE2DC007820CE /* kitchen */ = {
+		3BF723F127ABE2DC007820CE /* kitchenTableViewController */ = {
 			isa = PBXGroup;
 			children = (
 				3B5E37D627AAD4E900475A3D /* JFKitchenTableViewController.h */,
 				3B5E37D727AAD4E900475A3D /* JFKitchenTableViewController.m */,
 			);
-			name = kitchen;
+			name = kitchenTableViewController;
+			sourceTree = "<group>";
+		};
+		3BF7242327AD5F5E007820CE /* kitchenCoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3BF723D327AB889B007820CE /* Kitchen+CoreDataProperties.h */,
+				3BF723D427AB889B007820CE /* Kitchen+CoreDataClass.h */,
+				3BF723D527AB889B007820CE /* Kitchen+CoreDataClass.m */,
+				3BF723D627AB889B007820CE /* Kitchen+CoreDataProperties.m */,
+			);
+			name = kitchenCoreDataModel;
+			sourceTree = "<group>";
+		};
+		3BF7242427AD5F7B007820CE /* livingroomCoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3BF723D727AB889B007820CE /* Livingroom+CoreDataProperties.h */,
+				3BF723D827AB889B007820CE /* Livingroom+CoreDataClass.h */,
+				3BF723D927AB889B007820CE /* Livingroom+CoreDataClass.m */,
+				3BF723DA27AB889B007820CE /* Livingroom+CoreDataProperties.m */,
+			);
+			name = livingroomCoreDataModel;
+			sourceTree = "<group>";
+		};
+		3BF7242527AD5F94007820CE /* bedroomCoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3BF723DB27AB889B007820CE /* Bedroom+CoreDataProperties.h */,
+				3BF723DC27AB889B007820CE /* Bedroom+CoreDataClass.h */,
+				3BF723DD27AB889B007820CE /* Bedroom+CoreDataClass.m */,
+				3BF723DE27AB889B007820CE /* Bedroom+CoreDataProperties.m */,
+			);
+			name = bedroomCoreDataModel;
+			sourceTree = "<group>";
+		};
+		3BF7242627AD5FA1007820CE /* bathroomCoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3BF723DF27AB889B007820CE /* Bathroom+CoreDataProperties.h */,
+				3BF723E027AB889B007820CE /* Bathroom+CoreDataClass.h */,
+				3BF723E127AB889B007820CE /* Bathroom+CoreDataClass.m */,
+				3BF723E227AB889B007820CE /* Bathroom+CoreDataProperties.m */,
+			);
+			name = bathroomCoreDataModel;
+			sourceTree = "<group>";
+		};
+		3BF7242727AD5FD0007820CE /* livingroomTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3B5E37D927AAD50200475A3D /* JFLivingroomTableViewController.h */,
+				3B5E37DA27AAD50300475A3D /* JFLivingroomTableViewController.m */,
+			);
+			name = livingroomTableViewController;
+			sourceTree = "<group>";
+		};
+		3BF7242827AD5FDF007820CE /* bedroomTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3B5E37DC27AAD50F00475A3D /* JFBedroomTableViewController.h */,
+				3B5E37DD27AAD50F00475A3D /* JFBedroomTableViewController.m */,
+			);
+			name = bedroomTableViewController;
+			sourceTree = "<group>";
+		};
+		3BF7242927AD5FE8007820CE /* bathroomTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3B5E37DF27AAD51C00475A3D /* JFBathroomTableViewController.h */,
+				3B5E37E027AAD51D00475A3D /* JFBathroomTableViewController.m */,
+			);
+			name = bathroomTableViewController;
 			sourceTree = "<group>";
 		};
 		DE54C3440FB2BCE3C2CE80F0 /* Frameworks */ = {

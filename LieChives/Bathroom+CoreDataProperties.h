@@ -15,10 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Bathroom *> *)fetchRequest NS_SWIFT_NAME(fetchRequest());
 
-@property (nonatomic) BOOL maoJinJia;
-@property (nonatomic) BOOL shuiChi;
-@property (nonatomic) BOOL xiYuWeiShengYongPinJiaZi;
-@property (nonatomic) BOOL yuGang;
+@property (nullable, nonatomic, retain) NSNumber *maoJinJia;
+@property (nullable, nonatomic, retain) NSNumber *shuiChi;
+@property (nullable, nonatomic, retain) NSNumber *xiYuWeiShengYongPinJiaZi;
+@property (nullable, nonatomic, retain) NSNumber *yuGang;
+
+@property (nullable, nonatomic, retain) NSNumber *finishedCount;
 
 @end
 

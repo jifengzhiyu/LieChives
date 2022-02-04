@@ -15,15 +15,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Bedroom *> *)fetchRequest NS_SWIFT_NAME(fetchRequest());
 
-@property (nonatomic) BOOL chuang;
-@property (nonatomic) BOOL chuangTouGui;
-@property (nonatomic) BOOL chuWuGui;
-@property (nonatomic) BOOL men;
-@property (nonatomic) BOOL qiangBi;
-@property (nonatomic) BOOL shuGui;
-@property (nonatomic) BOOL xueXiZhuo;
-@property (nonatomic) BOOL yangTai;
-@property (nonatomic) BOOL yiGui;
+@property (nullable, nonatomic, retain) NSNumber *chuang;
+@property (nullable, nonatomic, retain) NSNumber *chuangTouGui;
+@property (nullable, nonatomic, retain) NSNumber *chuWuGui;
+@property (nullable, nonatomic, retain) NSNumber *men;
+@property (nullable, nonatomic, retain) NSNumber *qiangBi;
+@property (nullable, nonatomic, retain) NSNumber *shuGui;
+@property (nullable, nonatomic, retain) NSNumber *xueXiZhuo;
+@property (nullable, nonatomic, retain) NSNumber *yangTai;
+@property (nullable, nonatomic, retain) NSNumber *yiGui;
+
+@property (nullable, nonatomic, retain) NSNumber *finishedCount;
 
 @end
 

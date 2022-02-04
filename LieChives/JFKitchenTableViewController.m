@@ -25,9 +25,7 @@
     //如果没有创建数据库就创建（一次性初始化）
     [self initKitchenData];
     
-    
 }
-
 
 ///如果没有创建数据库就创建（一次性初始化）
 - (void)initKitchenData{
@@ -133,7 +131,6 @@
 }
 
 #pragma mark - 点击cell
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //获取cell
         JFRoomsTableViewCell *cell = (JFRoomsTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];

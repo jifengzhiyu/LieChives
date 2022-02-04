@@ -19,4 +19,6 @@
 @dynamic xiYuWeiShengYongPinJiaZi;
 @dynamic yuGang;
 
+@dynamic finishedCount;
+
 @end

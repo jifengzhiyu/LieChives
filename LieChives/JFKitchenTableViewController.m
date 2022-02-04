@@ -22,14 +22,14 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"厨房";
-    
+    //如果没有创建数据库就创建（一次性初始化）
     [self initKitchenData];
     
     
 }
 
 
-
+///如果没有创建数据库就创建（一次性初始化）
 - (void)initKitchenData{
     //先获取一下
     NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
@@ -84,28 +84,28 @@
         }else{
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
-        NSLog(@"橱柜---load");
+//        NSLog(@"橱柜---load");
     }else if ([cell.textLabel.text  isEqual: @"工作台"]){
         if(self.kitchen.gongZuoTai == nil || [self.kitchen.gongZuoTai  isEqual: @0]){
             cell.accessoryType = UITableViewCellAccessoryNone;
         }else{
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
-        NSLog(@"工作台---load");
+//        NSLog(@"工作台---load");
     }else if ([cell.textLabel.text  isEqual: @"水池"]){
         if(self.kitchen.shuiChi == nil || [self.kitchen.shuiChi  isEqual: @0]){
             cell.accessoryType = UITableViewCellAccessoryNone;
         }else{
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
-        NSLog(@"水池---load");
+//        NSLog(@"水池---load");
     }else if ([cell.textLabel.text  isEqual: @"灶台"]){
         if(self.kitchen.zaoTai == nil || [self.kitchen.zaoTai  isEqual: @0]){
             cell.accessoryType = UITableViewCellAccessoryNone;
         }else{
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
-        NSLog(@"灶台---load");
+//        NSLog(@"灶台---load");
     }
     return cell;
 }
@@ -126,7 +126,7 @@
         _kitchen = (Kitchen *)temp[0];
 
     }
-    NSLog(@"_kitchen --- %@",_kitchen);
+//    NSLog(@"_kitchen --- %@",_kitchen);
 
     return _kitchen;
 }
@@ -134,6 +134,7 @@
 #pragma mark - 点击cell
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //获取cell
         JFRoomsTableViewCell *cell = (JFRoomsTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     if([cell.textLabel.text  isEqual: @"橱柜"]){
         if(self.kitchen.chuGui == nil || [self.kitchen.chuGui  isEqual: @0]){
@@ -141,41 +142,41 @@
         }else{
             self.kitchen.chuGui = @0;
         }
-        NSLog(@"橱柜");
+//        NSLog(@"橱柜");
     }else if ([cell.textLabel.text  isEqual: @"工作台"]){
         if(self.kitchen.gongZuoTai == nil || [self.kitchen.gongZuoTai  isEqual: @0]){
         self.kitchen.gongZuoTai = @1;
         }else{
             self.kitchen.gongZuoTai = @0;
         }
-        NSLog(@"工作台");
+//        NSLog(@"工作台");
     }else if ([cell.textLabel.text  isEqual: @"水池"]){
         if(self.kitchen.shuiChi == nil || [self.kitchen.shuiChi  isEqual: @0]){
         self.kitchen.shuiChi = @1;
         }else{
             self.kitchen.shuiChi = @0;
         }
-        NSLog(@"水池");
+//        NSLog(@"水池");
     }else if ([cell.textLabel.text  isEqual: @"灶台"]){
         if(self.kitchen.zaoTai == nil || [self.kitchen.zaoTai  isEqual: @0]){
         self.kitchen.zaoTai = @1;
         }else{
             self.kitchen.zaoTai = @0;
         }
-        NSLog(@"灶台");
+//        NSLog(@"灶台");
     }
     
     //更新数据库
     NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
 
     for (Kitchen *kitchen  in temp) {
-        NSLog(@"更新数据%@--%@---%@---%@ 更新 前-----》一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
+//        NSLog(@"更新数据%@--%@---%@---%@ 更新 前-----》一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
 
         kitchen.gongZuoTai = self.kitchen.gongZuoTai;
         kitchen.zaoTai = self.kitchen.zaoTai;
         kitchen.chuGui = self.kitchen.chuGui;
         kitchen.shuiChi = self.kitchen.shuiChi;
-        NSLog(@"更新数据%@--%@---%@---%@ 更新 后-----》一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
+//        NSLog(@"更新数据%@--%@---%@---%@ 更新 后-----》一共有多少个记录%lu",kitchen.gongZuoTai,kitchen.zaoTai,kitchen.chuGui,kitchen.shuiChi,temp.count);
     }
     
     //保存

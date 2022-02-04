@@ -24,13 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"厨房";
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-//    [self initKitchenData];
+    [self initKitchenData];
     
 //    [self upDateKichenData];
     
@@ -52,27 +48,7 @@
 }
 
 - (void)fetchKitchenData{
-//    //查询请求
-//    NSFetchRequest *fetchrequest = [[NSFetchRequest alloc]init];
-//
-//    //设置一些参数
-//    //实体
-//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Kitchen" inManagedObjectContext:[JFCoreDataManager sharedManager].managerContext];
-//    //设置实体
-//    fetchrequest.entity = entity;
-    
-//    //谓词   有点像SQL语句中的 where
-//    NSPredicate *pre = [NSPredicate predicateWithFormat:@"age = %@",@"26"];
-//    //设置一下
-//    fetchrequest.predicate = pre;
-    
-    //排序
-//    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"age" ascending:YES];
-    //设置排序
-//    fetchrequest.sortDescriptors = @[sort];
-    
-    //执行查询请求
-//    NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:fetchrequest error:nil];
+
     NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
 
     
@@ -83,14 +59,15 @@
 }
 
 - (void)initKitchenData{
+    //先获取一下
+    NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
+    if(temp.count == 0){
+
     //通过实体描述描述出实体对象
   Kitchen *kitchen = [NSEntityDescription insertNewObjectForEntityForName:@"Kitchen" inManagedObjectContext:[JFCoreDataManager sharedManager].managerContext];
     
     //数据存储插入操作  KVC
-//    kitchen.gongZuoTai = self.kitchen.gongZuoTai;
-//    kitchen.zaoTai = self.kitchen.zaoTai;
-//    kitchen.chuGui = self.kitchen.chuGui;
-//    kitchen.shuiChi = self.kitchen.shuiChi;
+    //初始化数据库元素
     kitchen.gongZuoTai = @(0);
     kitchen.zaoTai = @(0);
     kitchen.chuGui = @(0);
@@ -99,6 +76,9 @@
     
     //通过上下文进行提交存储
     [[JFCoreDataManager sharedManager].managerContext save:nil];
+    }else{
+        return;
+    }
 }
 
 #pragma mark - cell的数据源方法
@@ -126,53 +106,38 @@
     cell.tintColor = [UIColor systemGreenColor];
     
     //打对勾了缓存了，就打对勾
-//    if(cell.isChecked == YES){
-//    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    }else{
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//    }
-//    cell.accessoryType = UITableViewCellAccessoryNone;
-//
-//    if(self.currentIndex == indexPath && self.currentIndex != nil){
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    }else{
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//    }
-    
-    
-    
-//    if([cell.textLabel.text  isEqual: @"橱柜"]){
-//        if(self.kitchen.chuGui == nil || [self.kitchen.chuGui  isEqual: @0]){
-//            cell.accessoryType = UITableViewCellAccessoryNone;
-//        }else{
-//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//        }
-//        NSLog(@"橱柜---load");
-//    }else if ([cell.textLabel.text  isEqual: @"工作台"]){
-////        self.kitchen.gongZuoTai = !self.kitchen.gongZuoTai;
-//        if(self.kitchen.gongZuoTai == nil || [self.kitchen.gongZuoTai  isEqual: @0]){
-//            cell.accessoryType = UITableViewCellAccessoryNone;
-//        }else{
-//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//        }
-//        NSLog(@"工作台---load");
-//    }else if ([cell.textLabel.text  isEqual: @"水池"]){
-////        self.kitchen.shuiChi = !self.kitchen.shuiChi;
-//        if(self.kitchen.shuiChi == nil || [self.kitchen.shuiChi  isEqual: @0]){
-//            cell.accessoryType = UITableViewCellAccessoryNone;
-//        }else{
-//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//        }
-//        NSLog(@"水池---load");
-//    }else if ([cell.textLabel.text  isEqual: @"灶台"]){
-////        self.kitchen.zaoTai = !self.kitchen.zaoTai;
-//        if(self.kitchen.zaoTai == nil || [self.kitchen.zaoTai  isEqual: @0]){
-//            cell.accessoryType = UITableViewCellAccessoryNone;
-//        }else{
-//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//        }
-//        NSLog(@"灶台---load");
-//    }
+    if([cell.textLabel.text  isEqual: @"橱柜"]){
+        if(self.kitchen.chuGui == nil || [self.kitchen.chuGui  isEqual: @0]){
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }else{
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        NSLog(@"橱柜---load");
+    }else if ([cell.textLabel.text  isEqual: @"工作台"]){
+//        self.kitchen.gongZuoTai = !self.kitchen.gongZuoTai;
+        if(self.kitchen.gongZuoTai == nil || [self.kitchen.gongZuoTai  isEqual: @0]){
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }else{
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        NSLog(@"工作台---load");
+    }else if ([cell.textLabel.text  isEqual: @"水池"]){
+//        self.kitchen.shuiChi = !self.kitchen.shuiChi;
+        if(self.kitchen.shuiChi == nil || [self.kitchen.shuiChi  isEqual: @0]){
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }else{
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        NSLog(@"水池---load");
+    }else if ([cell.textLabel.text  isEqual: @"灶台"]){
+//        self.kitchen.zaoTai = !self.kitchen.zaoTai;
+        if(self.kitchen.zaoTai == nil || [self.kitchen.zaoTai  isEqual: @0]){
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }else{
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        NSLog(@"灶台---load");
+    }
     return cell;
 }
 
@@ -236,74 +201,6 @@
     [self.tableView reloadData];
 }
 
-// 点击 cell 调用
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//
-//    NSIndexPath *oldIndex = [tableView indexPathForSelectedRow];
-//    [tableView cellForRowAtIndexPath:oldIndex].accessoryType = UITableViewCellAccessoryNone;
-//    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-//
-//    JFRoomsTableViewCell *cell = (JFRoomsTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-//
-////    if(cell.isChecked == YES){
-////        cell.isChecked = NO;
-////    }else{
-////        cell.isChecked = YES;
-////    }
-////    if(cell.accessoryType == UITableViewCellAccessoryNone){
-////        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-////    }else{
-////        cell.accessoryType = UITableViewCellAccessoryNone;
-////
-////    }
-//    NSLog(@"选中 cell----> %@",cell.textLabel.text);
-////    [self.tableView reloadData];
-//}
 
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

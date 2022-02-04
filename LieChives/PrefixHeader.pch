@@ -12,6 +12,8 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import "Masonry.h"
 #import "JFCoreDataManager.h"
+#import "JFRoomsTableViewCell.h"
+
 
 #define myColorLightGreen [UIColor colorWithRed:211 / 255.0 green:251 / 255.0 blue:226 / 255.0 alpha:1]
 

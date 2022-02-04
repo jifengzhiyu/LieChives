@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Kitchen *> *)fetchRequest NS_SWIFT_NAME(fetchRequest());
 
-@property (nonatomic) BOOL chuGui;
-@property (nonatomic) BOOL gongZuoTai;
-@property (nonatomic) BOOL shuiChi;
-@property (nonatomic) BOOL zaoTai;
+@property (nullable, nonatomic, retain) NSNumber *chuGui;
+@property (nullable, nonatomic, retain) NSNumber *gongZuoTai;
+@property (nullable, nonatomic, retain) NSNumber *shuiChi;
+@property (nullable, nonatomic, retain) NSNumber *zaoTai;
 
 
 @end

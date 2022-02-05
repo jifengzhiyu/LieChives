@@ -3,7 +3,7 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>throwThings</key>
+		<key>tips</key>
 		<array>
 			<string>发霉的物品</string>
 			<string>过期的物品</string>
@@ -22,7 +22,7 @@
 		<string>果断处理掉</string>
 	</dict>
 	<dict>
-		<key>guide</key>
+		<key>tips</key>
 		<array>
 			<string>主体是自己</string>
 			<string>每天断一点</string>
@@ -35,7 +35,7 @@
 		<string>思维指引</string>
 	</dict>
 	<dict>
-		<key>forBuy</key>
+		<key>tips</key>
 		<array>
 			<string>警惕消费陷阱</string>
 			<string>如果买了它，已有相似功能的物品就要选择丢弃部分</string>

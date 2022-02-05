@@ -54,7 +54,10 @@
     // 根据当前行的索引, 获取对应组的对应行的车
     NSString *tipText = tip.tips[indexPath.row];
     
+//    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.text = tipText;
+//    [cell.textLabel sizeToFit];
+    cell.textLabel.numberOfLines = 0;
     
     
     return cell;

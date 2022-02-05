@@ -59,6 +59,7 @@
 //    [cell.textLabel sizeToFit];
     cell.textLabel.numberOfLines = 0;
     
+    cell.userInteractionEnabled = NO;
     
     return cell;
 }

@@ -9,7 +9,6 @@
 
 @interface JFGrowNormalView()
 
-@property (nonatomic, strong) UILabel *growNormalViewLbl;
 
 @end
 
@@ -45,21 +44,8 @@
 - (UILabel *)growNormalViewLbl{
     if(!_growNormalViewLbl){
         _growNormalViewLbl = [UILabel new];
-                
-        //富文本设置（大小，居中）
-        NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-        paragraphStyle.alignment = NSTextAlignmentCenter;
-        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:self.inputText attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:25], NSParagraphStyleAttributeName : paragraphStyle}];
-        _growNormalViewLbl.attributedText = attrString;
     }
     return _growNormalViewLbl;
-}
-
-- (NSString *)inputText{
-    if(!_inputText){
-        _inputText = @"站位文字";
-    }
-    return _inputText;
 }
 
 

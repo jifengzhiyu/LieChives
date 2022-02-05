@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JFGrowNormalView : UIView
 
-@property (nonatomic, copy) NSString* inputText;
+@property (nonatomic, strong) UILabel *growNormalViewLbl;
 
 @end
 

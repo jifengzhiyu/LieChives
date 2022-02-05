@@ -34,6 +34,7 @@
 		3BF723EA27AB889B007820CE /* Bathroom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723E227AB889B007820CE /* Bathroom+CoreDataProperties.m */; };
 		3BF723ED27AB8BCF007820CE /* JFCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723EC27AB8BCF007820CE /* JFCoreDataManager.m */; };
 		3BF723F427ABE303007820CE /* JFRoomsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF723F327ABE303007820CE /* JFRoomsTableViewCell.m */; };
+		3BF7242B27AE2F7F007820CE /* Tips.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BF7242A27AE2F7F007820CE /* Tips.plist */; };
 		44646EDC0E251BEE79036CAA /* Pods_LieChives.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5503D4E27BB999334BEF3A /* Pods_LieChives.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		3BF723EC27AB8BCF007820CE /* JFCoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFCoreDataManager.m; sourceTree = "<group>"; };
 		3BF723F227ABE303007820CE /* JFRoomsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFRoomsTableViewCell.h; sourceTree = "<group>"; };
 		3BF723F327ABE303007820CE /* JFRoomsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFRoomsTableViewCell.m; sourceTree = "<group>"; };
+		3BF7242A27AE2F7F007820CE /* Tips.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Tips.plist; sourceTree = "<group>"; };
 		3C27940B218BB7F49B786F66 /* Pods-LieChives.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LieChives.release.xcconfig"; path = "Target Support Files/Pods-LieChives/Pods-LieChives.release.xcconfig"; sourceTree = "<group>"; };
 		4B2CF6D33EE3D937A7EA1289 /* Pods-LieChives.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LieChives.debug.xcconfig"; path = "Target Support Files/Pods-LieChives/Pods-LieChives.debug.xcconfig"; sourceTree = "<group>"; };
 		5B5503D4E27BB999334BEF3A /* Pods_LieChives.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LieChives.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 				3B6D7BDC27A81D970044F44E /* JFMainViewController.h */,
 				3B6D7BDD27A81D970044F44E /* JFMainViewController.m */,
 				3B6C907827A7E19B00FB4F5B /* Assets.xcassets */,
+				3BF7242A27AE2F7F007820CE /* Tips.plist */,
 			);
 			path = LieChives;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6C907C27A7E19B00FB4F5B /* LaunchScreen.storyboard in Resources */,
+				3BF7242B27AE2F7F007820CE /* Tips.plist in Resources */,
 				3B6C907927A7E19B00FB4F5B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

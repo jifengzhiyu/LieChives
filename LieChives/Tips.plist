@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>throwThings</key>
+		<array>
+			<string>发霉的物品</string>
+			<string>过期的物品</string>
+			<string>专门客用物品</string>
+			<string>一直凑活用的物品</string>
+			<string>一直用做备用的物品</string>
+			<string>犹豫要不要扔的物品</string>
+			<string>给你带来负面情绪的回忆的物品</string>
+			<string>一直留下来没有使用的物品</string>
+			<string>收拾才发现，之前被遗忘的物品</string>
+			<string>2. 之前收拾想着下次再收拾的物品</string>
+			<string>长时间没有看，包含过去回忆的物品</string>
+			<string>功能相似物品给定必须数量，挑选后，其他就扔掉</string>
+		</array>
+		<key>title</key>
+		<string>果断处理掉</string>
+	</dict>
+	<dict>
+		<key>guide</key>
+		<array>
+			<string>1. 主体是自己</string>
+			<string>4. 每天断一点</string>
+			<string>6. 收拾前%80的物品都是垃圾</string>
+			<string>2. 立足当下是否必须，不为未来准备</string>
+			<string>5. 把收拾的这一部分先拿出来摆在地上</string>
+			<string>3. 相似功能物品进出数量维持在必须数量</string>
+		</array>
+		<key>title</key>
+		<string>思维指引</string>
+	</dict>
+	<dict>
+		<key>New item</key>
+		<array>
+			<string></string>
+			<string></string>
+		</array>
+		<key>title</key>
+		<string>买的时候</string>
+	</dict>
+</array>
+</plist>

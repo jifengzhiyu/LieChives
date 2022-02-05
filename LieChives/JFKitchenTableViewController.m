@@ -22,6 +22,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"厨房";
+    
     //如果没有创建数据库就创建（一次性初始化）
     [self initKitchenData];
     
@@ -34,7 +35,7 @@
     if(temp.count == 0){
 
     //通过实体描述描述出实体对象
-  Kitchen *kitchen = [NSEntityDescription insertNewObjectForEntityForName:@"Kitchen" inManagedObjectContext:[JFCoreDataManager sharedManager].managerContext];
+    Kitchen *kitchen = [NSEntityDescription insertNewObjectForEntityForName:@"Kitchen" inManagedObjectContext:[JFCoreDataManager sharedManager].managerContext];
     
     //数据存储插入操作  KVC
     //初始化数据库元素
@@ -42,6 +43,7 @@
     kitchen.zaoTai = @(0);
     kitchen.chuGui = @(0);
     kitchen.shuiChi = @(0);
+        
     kitchen.finishedCount = @(0);
     
     
@@ -191,7 +193,10 @@
 
 //界面即将消失
 - (void)viewWillDisappear:(BOOL)animated{
-    if([self.kitchen.gongZuoTai isEqual:@(1)] && [self.kitchen.chuGui isEqual:@(1)] && [self.kitchen.shuiChi isEqual:@(1)] && [self.kitchen.zaoTai isEqual:@(1)]){
+    if([self.kitchen.gongZuoTai isEqual:@(1)] &&
+       [self.kitchen.chuGui isEqual:@(1)] &&
+       [self.kitchen.shuiChi isEqual:@(1)] &&
+       [self.kitchen.zaoTai isEqual:@(1)]){
         //更新数据库
         NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
         

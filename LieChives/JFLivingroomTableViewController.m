@@ -47,6 +47,8 @@
     livingroom.shaFa = @(0);
     livingroom.shuGui = @(0);
     livingroom.xieGui = @(0);
+        
+    livingroom.finishedCount = @(0);
     
     //通过上下文进行提交存储
     [[JFCoreDataManager sharedManager].managerContext save:nil];
@@ -58,12 +60,10 @@
 #pragma mark - cell的数据源方法
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 9;
 }
 

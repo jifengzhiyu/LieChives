@@ -9,6 +9,7 @@
 #import "JFGrowNormalView.h"
 
 #import "JFGrowNormalView.h"
+#import "MySetting+CoreDataClass.h"
 @interface JFGrowViewController ()
 ///已经坚持的天数View
 @property (nonatomic, strong) JFGrowNormalView *dayCountView;
@@ -42,6 +43,32 @@
 //    self.growNormalView.growNormalViewLbl.attributedText = attrString;
     
     self.progressView.progress = 0.7;
+    
+    [self save];
+    
+    [self fetch];
+}
+
+- (void)fetch{
+    //先获取一下
+    NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[MySetting fetchRequest] error:nil];
+    
+    for (NSString *str in temp) {
+        NSLog(@"%@",str);
+    }
+}
+
+- (void)save{
+    //通过实体描述描述出实体对象
+    MySetting *setting = [NSEntityDescription insertNewObjectForEntityForName:@"MySetting" inManagedObjectContext:[JFCoreDataManager sharedManager].managerContext];
+    
+    //数据存储插入操作  KVC
+    //初始化数据库元素
+    setting.datesArr = @[@"aaaaaaa", @"bbbbbb", @"cccccccc"];
+    
+    
+    //通过上下文进行提交存储
+    [[JFCoreDataManager sharedManager].managerContext save:nil];
 }
 
 - (void)setupSubViews{

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B3FBA8827AF6D280089E82B /* MySetting+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA8627AF6D280089E82B /* MySetting+CoreDataClass.m */; };
+		3B3FBA8927AF6D280089E82B /* MySetting+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA8727AF6D280089E82B /* MySetting+CoreDataProperties.m */; };
 		3B5E37D027AA28F900475A3D /* JFPresentTimeBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E37CF27AA28F900475A3D /* JFPresentTimeBackgroundView.m */; };
 		3B5E37D427AA7FF900475A3D /* JFRoomsBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E37D327AA7FF800475A3D /* JFRoomsBackgroundView.m */; };
 		3B5E37D827AAD4E900475A3D /* JFKitchenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E37D727AAD4E900475A3D /* JFKitchenTableViewController.m */; };
@@ -41,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B3FBA8427AF6D280089E82B /* MySetting+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MySetting+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3B3FBA8527AF6D280089E82B /* MySetting+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MySetting+CoreDataClass.h"; sourceTree = "<group>"; };
+		3B3FBA8627AF6D280089E82B /* MySetting+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MySetting+CoreDataClass.m"; sourceTree = "<group>"; };
+		3B3FBA8727AF6D280089E82B /* MySetting+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MySetting+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3B5E37CE27AA28F900475A3D /* JFPresentTimeBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFPresentTimeBackgroundView.h; sourceTree = "<group>"; };
 		3B5E37CF27AA28F900475A3D /* JFPresentTimeBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFPresentTimeBackgroundView.m; sourceTree = "<group>"; };
 		3B5E37D127AA343F00475A3D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -124,6 +130,17 @@
 				3C27940B218BB7F49B786F66 /* Pods-LieChives.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3B3FBA8327AF6CD30089E82B /* mySetting */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA8427AF6D280089E82B /* MySetting+CoreDataProperties.h */,
+				3B3FBA8527AF6D280089E82B /* MySetting+CoreDataClass.h */,
+				3B3FBA8627AF6D280089E82B /* MySetting+CoreDataClass.m */,
+				3B3FBA8727AF6D280089E82B /* MySetting+CoreDataProperties.m */,
+			);
+			name = mySetting;
 			sourceTree = "<group>";
 		};
 		3B5E37D527AAD49C00475A3D /* roomsTableViewController */ = {
@@ -246,6 +263,7 @@
 		3BF723F027AB8F5D007820CE /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				3B3FBA8327AF6CD30089E82B /* mySetting */,
 				3BF7242327AD5F5E007820CE /* kitchenCoreDataModel */,
 				3BF7242427AD5F7B007820CE /* livingroomCoreDataModel */,
 				3BF7242527AD5F94007820CE /* bedroomCoreDataModel */,
@@ -460,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B3FBA8827AF6D280089E82B /* MySetting+CoreDataClass.m in Sources */,
 				3B6C907F27A7E19B00FB4F5B /* main.m in Sources */,
 				3B6D7BE727A83CA20044F44E /* JFTipsTableViewController.m in Sources */,
 				3B6C906B27A7E19900FB4F5B /* AppDelegate.m in Sources */,
@@ -474,6 +493,7 @@
 				3B6D7BF027A8430E0044F44E /* JFSettingTableViewController.m in Sources */,
 				3BF723F427ABE303007820CE /* JFRoomsTableViewCell.m in Sources */,
 				3BF723ED27AB8BCF007820CE /* JFCoreDataManager.m in Sources */,
+				3B3FBA8927AF6D280089E82B /* MySetting+CoreDataProperties.m in Sources */,
 				3BF723E927AB889B007820CE /* Bathroom+CoreDataClass.m in Sources */,
 				3B6C907727A7E19900FB4F5B /* LieChives.xcdatamodeld in Sources */,
 				3B5E37D427AA7FF900475A3D /* JFRoomsBackgroundView.m in Sources */,

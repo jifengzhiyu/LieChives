@@ -38,10 +38,14 @@
         <attribute name="shuGui" optional="YES" attributeType="Integer 64" usesScalarValueType="YES"/>
         <attribute name="xieGui" optional="YES" attributeType="Integer 64" usesScalarValueType="YES"/>
     </entity>
+    <entity name="MySetting" representedClassName="MySetting" syncable="YES">
+        <attribute name="datesArr" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
+    </entity>
     <elements>
         <element name="Bathroom" positionX="-18" positionY="135" width="128" height="104"/>
         <element name="Bedroom" positionX="-36" positionY="90" width="128" height="179"/>
         <element name="Kitchen" positionX="-63" positionY="-18" width="128" height="104"/>
         <element name="Livingroom" positionX="-54" positionY="18" width="128" height="179"/>
+        <element name="MySetting" positionX="-36" positionY="108" width="128" height="44"/>
     </elements>
 </model>

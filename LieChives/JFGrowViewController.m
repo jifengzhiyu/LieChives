@@ -17,12 +17,15 @@
 @property (nonatomic, strong) JFGrowNormalView *leftCountView;
 ///完成次数View
 @property (nonatomic, strong) JFGrowNormalView *finishedCountView;
-
 ///进度条
 @property (nonatomic, strong) UIProgressView *progressView;
 
 ///对应coredata模型的缓存模型
 @property (nonatomic, strong) MySetting *mySettingModel;
+
+///DaysLblText 坚持天数标签的文字
+@property (nonatomic, strong) NSString *daysLblText;
+
 
 
 @end
@@ -34,22 +37,32 @@
     // Do any additional setup after loading the view.
     
     
-//    NSString* myStr = @"娃娃腻腻歪";
-//    //富文本设置（大小，居中）
-//            NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-//            paragraphStyle.alignment = NSTextAlignmentCenter;
-//            NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:myStr attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:25], NSParagraphStyleAttributeName : paragraphStyle}];
-//    self.growNormalView.growNormalViewLbl.attributedText = attrString;
+
     
     self.progressView.progress = 0.7;
 
+    [self setupSubViews];
+    
     [self initGrowData];
     
     [self writeDateData];
     
+    [self writeKeepDaysLbl];
+    
 //    [self fetch];
 }
 
+- (void)writeKeepDaysLbl{
+    [self fetchLblTexts];
+    //富文本设置（大小，居中）
+    NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:self.daysLblText attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:25], NSParagraphStyleAttributeName : paragraphStyle}];
+//        self.growNormalView.growNormalViewLbl.attributedText = attrString;
+    self.dayCountView.growNormalViewLbl.attributedText = attrString;
+}
+
+#pragma mark - 有关coreData方法
 ///每次打开app就取出之前记录的日期，没有重复就添加
 - (void)writeDateData{
     //获取现在时间
@@ -101,12 +114,13 @@
     
 }
 
-- (void)fetch{
+- (void)fetchLblTexts{
     //先获取一下
     NSArray *fetchTemp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[MySetting fetchRequest] error:nil];
     
     for (MySetting *mySetting in fetchTemp) {
-        NSLog(@"fetch--%@---fetchTemp.count:%lu",mySetting.datesArr, (unsigned long)fetchTemp.count);
+//        NSLog(@"fetch--%@---fetchTemp.count:%lu",mySetting.datesArr, (unsigned long)fetchTemp.count);
+        self.daysLblText = [NSString stringWithFormat:@"我已坚持%zd天",mySetting.datesArr.count];
     }
 }
 
@@ -131,6 +145,7 @@
     }
 }
 
+#pragma mark - setupSubViews
 - (void)setupSubViews{
     //添加子视图
     [self.view addSubview:self.dayCountView];

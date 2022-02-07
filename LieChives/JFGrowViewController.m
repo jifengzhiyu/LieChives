@@ -42,34 +42,12 @@
 //    self.growNormalView.growNormalViewLbl.attributedText = attrString;
     
     self.progressView.progress = 0.7;
-//    [self fetch];
 
-//    [self initGrowData];
+    [self initGrowData];
     
     [self writeDateData];
-//        [self initGrowData];
     
-//    NSArray *temp1 = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[MySetting fetchRequest] error:nil];
-//    NSString *presentDateString1 = @"1212--1212--121";
-//    for (MySetting *mySetting  in temp1) {
-////        NSLog(@"之前的--%@",mySetting.datesArr);
-////
-////        [mySetting.datesArr addObject:presentDateString1];
-////
-////        NSLog(@"之后的--%@",mySetting.datesArr);
-//        NSMutableArray *copyMutableArr = [mySetting.datesArr mutableCopy];
-//        [copyMutableArr addObject:presentDateString1];
-//        mySetting.datesArr = copyMutableArr;
-//    }
-//    //保存
-//    NSError *error = nil;
-//    if ([[JFCoreDataManager sharedManager].managerContext save:&error]) {
-//        NSLog(@"更新数据成功");
-//    }else{
-//        NSLog(@"更新数据失败, %@", error);
-//    }
-
-//    [self fetch];
+    [self fetch];
 }
 
 ///每次打开app就取出之前记录的日期，没有重复就添加
@@ -84,62 +62,43 @@
     NSString *presentDateString = [dateFormatter stringFromDate:presentDate];
     
 //    NSLog(@"%@",presentDateString);
-    //先获取一下数据库数据
-//    NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[MySetting fetchRequest] error:nil];
-    NSArray *initArr = @[@"111:111:111", @"222:222:222"];
-    [[NSUserDefaults standardUserDefaults] setObject:initArr forKey:@"datsKey"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *datesArray = [userDefaults objectForKey:@"datsKey"];
-    NSLog(@"datesArray：%@",datesArray);
     //拿到数据库里的日期数组
-//    self.mySettingModel = temp[0];
-    
+    NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[MySetting fetchRequest] error:nil];
+    self.mySettingModel = temp[0];
+    NSLog(@"%@",self.mySettingModel);
     //判断数据库是否需要添加当天日期
     BOOL isWrite = YES;
     
     //遍历数据库里的日期数组
-//    for (NSString *datesStr in self.mySettingModel.datesArr) {
-//        NSLog(@"便利日期数组--%@",datesStr);
-//        //判断是否重复
-//        if([datesStr isEqualToString:presentDateString]){
-//            isWrite = NO;
-//        }
-//    }
-    for (NSString *datesStr in datesArray) {
+    for (NSString *datesStr in self.mySettingModel.datesArr) {
         NSLog(@"便利日期数组--%@",datesStr);
         //判断是否重复
         if([datesStr isEqualToString:presentDateString]){
             isWrite = NO;
+            break;
         }
     }
     
     //如果没有重复就添加
     if(isWrite == YES){
         //更新数据库
-        
-//        for (MySetting *upDateSetting in temp) {
-//            [upDateSetting.datesArr addObject:presentDateString];
-//            NSLog(@"upDateSetting.datesArr--%@",upDateSetting.datesArr);
-//        }
-        //保存
-//        NSError *error = nil;
-//        if ([[JFCoreDataManager sharedManager].managerContext save:&error]) {
-//            NSLog(@"更新数据成功");
-//        }else{
-//            NSLog(@"更新数据失败, %@", error);
-//        }
-        NSMutableArray *copyDatesArray = [datesArray mutableCopy];
-        [copyDatesArray addObject:presentDateString];
-        [userDefaults setObject:copyDatesArray forKey:@"datsKey"];
-        NSLog(@"copyDatesArray %@",copyDatesArray);
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
+        for (MySetting *upDateSetting in temp) {
+            NSLog(@"upDateSetting.datesArr--%@",upDateSetting.datesArr);
+            
+            NSMutableArray *copyMutableArr = [upDateSetting.datesArr mutableCopy];
+            [copyMutableArr addObject:presentDateString];
+            upDateSetting.datesArr = copyMutableArr;
+        }
+//        保存
+        NSError *error = nil;
+        if ([[JFCoreDataManager sharedManager].managerContext save:&error]) {
+            NSLog(@"更新数据成功");
+        }else{
+            NSLog(@"更新数据失败, %@", error);
+        }
     }
     
-//    NSLog(@"%@",self.mySetting.datesArr);
-
 }
 
 - (void)fetch{
@@ -162,8 +121,8 @@
     
     //数据存储插入操作  KVC
     //初始化数据库元素
-        //先搞成复数来测试
-        setting.datesArr = [NSMutableArray arrayWithObjects:@"0000-00-00",@"1111-11-11", nil];
+    //先搞成复数来测试
+    setting.datesArr = [NSMutableArray arrayWithObjects:@"0000-00-00",@"1111-11-11", nil];
     
     //通过上下文进行提交存储
     [[JFCoreDataManager sharedManager].managerContext save:nil];

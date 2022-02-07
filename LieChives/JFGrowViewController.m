@@ -47,7 +47,7 @@
     
     [self writeDateData];
     
-    [self fetch];
+//    [self fetch];
 }
 
 ///每次打开app就取出之前记录的日期，没有重复就添加
@@ -72,7 +72,7 @@
     
     //遍历数据库里的日期数组
     for (NSString *datesStr in self.mySettingModel.datesArr) {
-        NSLog(@"便利日期数组--%@",datesStr);
+//        NSLog(@"便利日期数组--%@",datesStr);
         //判断是否重复
         if([datesStr isEqualToString:presentDateString]){
             isWrite = NO;
@@ -84,7 +84,7 @@
     if(isWrite == YES){
         //更新数据库
         for (MySetting *upDateSetting in temp) {
-            NSLog(@"upDateSetting.datesArr--%@",upDateSetting.datesArr);
+//            NSLog(@"upDateSetting.datesArr--%@",upDateSetting.datesArr);
             
             NSMutableArray *copyMutableArr = [upDateSetting.datesArr mutableCopy];
             [copyMutableArr addObject:presentDateString];

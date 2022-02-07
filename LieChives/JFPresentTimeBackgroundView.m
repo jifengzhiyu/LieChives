@@ -118,7 +118,6 @@
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         //设定时间格式,这里可以设置成自己需要的格式
         [dateFormatter setDateFormat:@"YYYY:MM:dd"];
-    //    dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_CN"];
         NSString *presentDateString = [dateFormatter stringFromDate:presentDate];
         _presentArr = [presentDateString componentsSeparatedByString:@":"];
     //    NSLog(@"%@",presentArr);

@@ -8,7 +8,7 @@
 #import "JFKitchenTableViewController.h"
 #import "Kitchen+CoreDataClass.h"
 @interface JFKitchenTableViewController ()
-
+///对应coredata模型的缓存模型
 @property (nonatomic, strong) Kitchen *kitchen;
 ///kitchenPartArr记录cell的cell.textLabel.text
 @property (nonatomic, copy) NSArray *kitchenPartArr;

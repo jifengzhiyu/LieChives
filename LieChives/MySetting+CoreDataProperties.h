@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<MySetting *> *)fetchRequest NS_SWIFT_NAME(fetchRequest());
 
-@property (nullable, nonatomic, retain) NSObject *datesArr;
+@property (nullable, nonatomic, retain) NSMutableArray *datesArr;
+
 
 @end
 

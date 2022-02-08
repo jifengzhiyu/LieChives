@@ -25,16 +25,16 @@
 ///进度条
 @property (nonatomic, strong) UIProgressView *progressView;
 
-///对应coredata模型的缓存模型
-@property (nonatomic, strong) MySetting *mySettingModel;
+
 
 ///DaysLblText 坚持天数标签的文字
 @property (nonatomic, strong) NSString *daysLblText;
-
+///allFinishedCountLblText完成总轮数标签的文字
 @property (nonatomic, strong) NSString *allFinishedCountLblText;
 
 
-
+///对应coredata模型的缓存模型
+@property (nonatomic, strong) MySetting *mySettingModel;
 //房间coreData模型
 @property (nonatomic, strong) Kitchen *kitchenModel;
 
@@ -62,7 +62,7 @@
     
     //每次打开app就取出之前记录的日期，没有重复就添加到数据库
     [self writeDateData];
-    
+    //写入坚持天数Ui
     [self writeKeepDaysLbl];
     
 
@@ -99,6 +99,7 @@
 
 }
 
+#pragma mark - fetchRoomsFinishedCount
 - (void)fetchRoomsFinishedCount{
 #pragma mark 查询四个房间数据库
     //查询厨房
@@ -240,6 +241,7 @@
 
 ///坚持时间
 - (void)writeKeepDaysLbl{
+    //获取文字
     [self fetchKeepDaysLblTexts];
     //富文本设置（大小，居中）
     NSMutableParagraphStyle *keepDayParagraphStyle = [NSMutableParagraphStyle new];

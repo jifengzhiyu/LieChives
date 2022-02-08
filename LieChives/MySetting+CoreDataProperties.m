@@ -15,5 +15,6 @@
 }
 
 @dynamic datesArr;
+@dynamic allFinishedCount;
 
 @end

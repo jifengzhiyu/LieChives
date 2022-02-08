@@ -106,6 +106,23 @@
     return cell;
 }
 
+
+#pragma mark - 通知
+- (void)refreshView{
+    [self.tableView reloadData];
+}
+
+- (instancetype)init{
+    if(self = [super init]){
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:RefreshRoomsNotification object:nil];
+    }
+    return self;
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:RefreshRoomsNotification object:nil];
+}
+
 #pragma mark - 懒加载
 
 - (NSArray *)bathroomPartArr{
@@ -225,6 +242,9 @@
     for (Bathroom *bathroom in temp) {
         NSLog(@"bathroom.finishedCount %@",bathroom.finishedCount);
     }
+    
+    //    //发送通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:BathroomNotification object:nil];
         
 }
 

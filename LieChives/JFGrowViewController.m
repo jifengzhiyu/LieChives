@@ -10,6 +10,11 @@
 
 #import "JFGrowNormalView.h"
 #import "MySetting+CoreDataClass.h"
+
+#import "Kitchen+CoreDataClass.h"
+#import "Livingroom+CoreDataClass.h"
+#import "Bedroom+CoreDataClass.h"
+#import "Bathroom+CoreDataClass.h"
 @interface JFGrowViewController ()
 ///已经坚持的天数View
 @property (nonatomic, strong) JFGrowNormalView *dayCountView;
@@ -26,6 +31,18 @@
 ///DaysLblText 坚持天数标签的文字
 @property (nonatomic, strong) NSString *daysLblText;
 
+@property (nonatomic, strong) NSString *allFinishedCountLblText;
+
+
+
+//房间coreData模型
+@property (nonatomic, strong) Kitchen *kitchenModel;
+
+@property (nonatomic, strong) Livingroom *livingroomModel;
+
+@property (nonatomic, strong) Bedroom *bedroomModel;
+
+@property (nonatomic, strong) Bathroom *bathroomModel;
 
 
 @end
@@ -36,35 +53,217 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-
-    
     self.progressView.progress = 0.7;
 
     [self setupSubViews];
     
+    //初始化 设置数据库表
     [self initGrowData];
     
+    //每次打开app就取出之前记录的日期，没有重复就添加到数据库
     [self writeDateData];
     
     [self writeKeepDaysLbl];
     
-//    [self fetch];
+
 }
 
-- (void)writeKeepDaysLbl{
-    [self fetchLblTexts];
+#pragma mark - 通知相关
+- (instancetype)init{
+    if(self = [super init]){
+        //监听通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRoomsFinishedCount) name:MainNotification object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRoomsFinishedCount) name:KitchenNotification object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRoomsFinishedCount) name:LivingroomNotification object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRoomsFinishedCount) name:BedroomNotification object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRoomsFinishedCount) name:BathroomNotification object:nil];
+
+    }
+    return self;
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MainNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:KitchenNotification object:nil];
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:LivingroomNotification object:nil];
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:BedroomNotification object:nil];
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:BathroomNotification object:nil];
+
+}
+
+- (void)fetchRoomsFinishedCount{
+#pragma mark 查询四个房间数据库
+    //查询厨房
+    NSArray *kitchenTempArr = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
+    //这里要判断，因为数据库表初始化是要下载app点开一次厨房的按钮
+    if(kitchenTempArr.count){
+        for (Kitchen *kitchenTempModel in kitchenTempArr) {
+            self.kitchenModel = kitchenTempModel;
+        }
+    
+//    NSLog(@"kitchenModel: %@",self.kitchenModel.shuiChi);
+    }
+    
+    //查询客厅
+    NSArray *livingroomTempArr = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Livingroom fetchRequest] error:nil];
+    //这里要判断，因为数据库表初始化是要下载app点开一次厨房的按钮
+    if(livingroomTempArr.count){
+        for (Livingroom *livingroomTempNodel in livingroomTempArr) {
+            self.livingroomModel = livingroomTempNodel;
+        }
+//    NSLog(@"isKitchenFinished: %d",self.isKitchenFinished);
+    }
+    
+    //查询卧室
+    NSArray *bedroomTempArr = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Bedroom fetchRequest] error:nil];
+    //这里要判断，因为数据库表初始化是要下载app点开一次厨房的按钮
+    if(bedroomTempArr.count){
+        for (Bedroom *bedroomTempModel in bedroomTempArr) {
+            self.bedroomModel = bedroomTempModel;
+        }
+
+//    NSLog(@"isKitchenFinished: %d",self.isKitchenFinished);
+    }
+    
+    //查询卫生间
+    NSArray *bathroomTempArr = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Bathroom fetchRequest] error:nil];
+    //这里要判断，因为数据库表初始化是要下载app点开一次厨房的按钮
+    if(bathroomTempArr.count){
+        for (Bathroom *bathroomTempModel in bathroomTempArr) {
+            self.bathroomModel = bathroomTempModel;
+        }
+        
+//    NSLog(@"isBathroomFinished: %d",self.isBathroomFinished);
+    }
+    
+#pragma mark 更新数据库总体完成轮次
+
+    //拿到数据库里的设置表
+    NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[MySetting fetchRequest] error:nil];
+   
+        //如果一个轮次，更新数据库完成轮次，并把四个房间的对勾清理掉
+    for (MySetting *upDateSetting in temp) {
+        if([self.kitchenModel.finishedCount isEqual:@(1)] &&
+           [self.livingroomModel.finishedCount isEqual:@(1)] &&
+           [self.bedroomModel.finishedCount isEqual:@(1)] &&
+           [self.bathroomModel.finishedCount isEqual:@(1)]
+           ){
+            /*
+             //NSNumber对象不能自增
+             将NSNumber转化为int
+             将int数据自增
+             将int数据转化成NSNumber更新保存
+             */
+            int intAllFinishedCount = [upDateSetting.allFinishedCount intValue];
+            intAllFinishedCount++;
+            upDateSetting.allFinishedCount = [NSNumber numberWithInt:intAllFinishedCount];
+            NSLog(@"allFinishedCount----%@",upDateSetting.allFinishedCount);
+            //添加标签文本
+            self.allFinishedCountLblText = [NSString stringWithFormat:@"已完成%@轮",upDateSetting.allFinishedCount];
+                       
+            /*
+             获取之前所有的数据，清零四个房间的数据库
+             */
+            self.kitchenModel.finishedCount = @(0);
+            self.livingroomModel.finishedCount = @(0);
+            self.bedroomModel.finishedCount = @(0);
+            self.bathroomModel.finishedCount = @(0);
+
+            self.kitchenModel.gongZuoTai = @(0);
+            self.kitchenModel.chuGui = @(0);
+            self.kitchenModel.zaoTai = @(0);
+            self.kitchenModel.shuiChi = @(0);
+            
+            self.livingroomModel.shaFa = @(0);
+            self.livingroomModel.shuGui = @(0);
+            self.livingroomModel.dianShiGui = @(0);
+            self.livingroomModel.bingXiang = @(0);
+            self.livingroomModel.canZhuo = @(0);
+            self.livingroomModel.qiangBi = @(0);
+            self.livingroomModel.xieGui = @(0);
+            self.livingroomModel.chuWuGui = @(0);
+            self.livingroomModel.chaJi = @(0);
+
+            self.bedroomModel.yiGui = @(0);
+            self.bedroomModel.chuangTouGui = @(0);
+            self.bedroomModel.chuang = @(0);
+            self.bedroomModel.shuGui = @(0);
+            self.bedroomModel.yangTai = @(0);
+            self.bedroomModel.qiangBi = @(0);
+            self.bedroomModel.xueXiZhuo = @(0);
+            self.bedroomModel.men = @(0);
+            self.bedroomModel.chuWuGui = @(0);
+
+            self.bathroomModel.shuiChi = @(0);
+            self.bathroomModel.yuGang = @(0);
+            self.bathroomModel.xiYuWeiShengYongPinJiaZi = @(0);
+            self.bathroomModel.maoJinJia = @(0);
+
+            //刷新四个房间的数据(如果不退回主页，直接点成长，再返回主页面的房间里面的话，就还是打勾的)
+            //使用通知
+            //发送通知给四个房间VC
+            [[NSNotificationCenter defaultCenter] postNotificationName:RefreshRoomsNotification object:nil];
+            
+        }
+        }
+//        保存
+        NSError *error = nil;
+        if ([[JFCoreDataManager sharedManager].managerContext save:&error]) {
+            NSLog(@"更新数据成功");
+        }else{
+            NSLog(@"更新数据失败, %@", error);
+        }
+    
+    [self writeAllFinishedCountLbl];
+
+    
+}
+
+#pragma mark - 写入UI文字
+///完成总轮次
+- (void)writeAllFinishedCountLbl{
     //富文本设置（大小，居中）
-    NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-    paragraphStyle.alignment = NSTextAlignmentCenter;
-    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:self.daysLblText attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:25], NSParagraphStyleAttributeName : paragraphStyle}];
+    NSMutableParagraphStyle *allFinishedCountParagraphStyle = [NSMutableParagraphStyle new];
+    allFinishedCountParagraphStyle.alignment = NSTextAlignmentCenter;
+    NSMutableAttributedString *allFinishedCountAttrString = [[NSMutableAttributedString alloc] initWithString:self.allFinishedCountLblText attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:25], NSParagraphStyleAttributeName : allFinishedCountParagraphStyle}];
 //        self.growNormalView.growNormalViewLbl.attributedText = attrString;
-    self.dayCountView.growNormalViewLbl.attributedText = attrString;
+    self.finishedCountView.growNormalViewLbl.attributedText = allFinishedCountAttrString;
+}
+
+///坚持时间
+- (void)writeKeepDaysLbl{
+    [self fetchKeepDaysLblTexts];
+    //富文本设置（大小，居中）
+    NSMutableParagraphStyle *keepDayParagraphStyle = [NSMutableParagraphStyle new];
+    keepDayParagraphStyle.alignment = NSTextAlignmentCenter;
+    NSMutableAttributedString *keepDayAttrString = [[NSMutableAttributedString alloc] initWithString:self.daysLblText attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:25], NSParagraphStyleAttributeName : keepDayParagraphStyle}];
+//        self.growNormalView.growNormalViewLbl.attributedText = attrString;
+    self.dayCountView.growNormalViewLbl.attributedText = keepDayAttrString;
+}
+
+- (void)fetchKeepDaysLblTexts{
+    //先获取一下
+    NSArray *fetchTemp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[MySetting fetchRequest] error:nil];
+    
+    for (MySetting *mySetting in fetchTemp) {
+//        NSLog(@"fetch--%@---fetchTemp.count:%lu",mySetting.datesArr, (unsigned long)fetchTemp.count);
+        //count - 1 减去初始化加的数据
+        self.daysLblText = [NSString stringWithFormat:@"我已坚持%zd天",mySetting.datesArr.count - 1];
+    }
 }
 
 #pragma mark - 有关coreData方法
-///每次打开app就取出之前记录的日期，没有重复就添加
+///每次打开app就取出之前记录的日期，没有重复就添加到数据库
 - (void)writeDateData{
+    
     //获取现在时间
     NSDate *presentDate = [NSDate date];
     //创建一个时间格式化对象
@@ -79,7 +278,7 @@
     //拿到数据库里的日期数组
     NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[MySetting fetchRequest] error:nil];
     self.mySettingModel = temp[0];
-    NSLog(@"%@",self.mySettingModel);
+//    NSLog(@"%@",self.mySettingModel);
     //判断数据库是否需要添加当天日期
     BOOL isWrite = YES;
     
@@ -103,6 +302,7 @@
             [copyMutableArr addObject:presentDateString];
             upDateSetting.datesArr = copyMutableArr;
         }
+        
 //        保存
         NSError *error = nil;
         if ([[JFCoreDataManager sharedManager].managerContext save:&error]) {
@@ -112,17 +312,12 @@
         }
     }
     
+    
+    
+    
 }
 
-- (void)fetchLblTexts{
-    //先获取一下
-    NSArray *fetchTemp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[MySetting fetchRequest] error:nil];
-    
-    for (MySetting *mySetting in fetchTemp) {
-//        NSLog(@"fetch--%@---fetchTemp.count:%lu",mySetting.datesArr, (unsigned long)fetchTemp.count);
-        self.daysLblText = [NSString stringWithFormat:@"我已坚持%zd天",mySetting.datesArr.count];
-    }
-}
+
 
 ///如果没有创建数据库就创建（一次性初始化）
 - (void)initGrowData{
@@ -136,7 +331,8 @@
     //数据存储插入操作  KVC
     //初始化数据库元素
     //先搞成复数来测试
-    setting.datesArr = [NSMutableArray arrayWithObjects:@"0000-00-00",@"1111-11-11", nil];
+    setting.datesArr = [NSMutableArray arrayWithObject:@"0000-00-00"];
+    setting.allFinishedCount = @(0);
     
     //通过上下文进行提交存储
     [[JFCoreDataManager sharedManager].managerContext save:nil];
@@ -188,6 +384,13 @@
 
 
 # pragma mark - 懒加载
+- (NSString *)allFinishedCountLblText{
+    if(!_allFinishedCountLblText){
+        _allFinishedCountLblText = @"已完成0轮";
+    }
+    return _allFinishedCountLblText;
+}
+
 - (MySetting *)mySettingModel{
     if(!_mySettingModel){
         _mySettingModel = [MySetting new];

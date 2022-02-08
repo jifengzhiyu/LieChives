@@ -26,6 +26,8 @@
     //如果没有创建数据库就创建（一次性初始化）
     [self initKitchenData];
     
+
+    
 }
 
 ///如果没有创建数据库就创建（一次性初始化）
@@ -109,6 +111,22 @@
 //        NSLog(@"灶台---load");
     }
     return cell;
+}
+
+#pragma mark - 通知
+- (void)refreshView{
+    [self.tableView reloadData];
+}
+
+- (instancetype)init{
+    if(self = [super init]){
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView) name:RefreshRoomsNotification object:nil];
+    }
+    return self;
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:RefreshRoomsNotification object:nil];
 }
 
 #pragma mark - 懒加载
@@ -229,6 +247,9 @@
     for (Kitchen *kitchen in temp) {
         NSLog(@"kitchen.finishedCount %@",kitchen.finishedCount);
     }
+    
+    //    //发送通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:KitchenNotification object:nil];
         
 }
 @end

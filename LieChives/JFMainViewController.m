@@ -10,6 +10,8 @@
 #import "JFGrowViewController.h"
 #import "JFSettingTableViewController.h"
 
+#import "Kitchen+CoreDataClass.h"
+
 @interface JFMainViewController ()<UITabBarControllerDelegate>
 
 @end
@@ -24,9 +26,11 @@
     self.delegate = self.delegate;
     
     [self addChildViewControllers];
-    
-    
+    //发送通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:MainNotification object:nil];
 }
+
+
 
 
 ///创建自控制器（标题，item图片 文字）

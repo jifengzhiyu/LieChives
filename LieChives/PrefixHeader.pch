@@ -20,4 +20,13 @@
 #define myColorDarkGreen [UIColor colorWithRed:119 / 255.0 green:192 / 255.0 blue:178 / 255.0 alpha:1]
 
 
+//通知名
+#define KitchenNotification @"KitchenNotification"
+#define LivingroomNotification @"LivingroomNotification"
+#define BedroomNotification @"BedroomNotification"
+#define BathroomNotification @"BathroomNotification"
+#define MainNotification @"MainNotification"
+#define RefreshRoomsNotification @"RefreshRoomsNotification"
+
+
 #endif /* PrefixHeader_pch */

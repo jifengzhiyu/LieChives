@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSMutableArray *datesArr;
 
+@property (nullable, nonatomic, retain) NSNumber *allFinishedCount;
 
 @end
 

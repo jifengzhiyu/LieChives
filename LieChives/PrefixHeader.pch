@@ -27,6 +27,6 @@
 #define BathroomNotification @"BathroomNotification"
 #define MainNotification @"MainNotification"
 #define RefreshRoomsNotification @"RefreshRoomsNotification"
-
+#define RefreshHomeOverCount @"RefreshHomeOverCount"
 
 #endif /* PrefixHeader_pch */

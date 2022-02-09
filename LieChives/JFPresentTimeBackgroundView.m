@@ -6,6 +6,7 @@
 //
 
 #import "JFPresentTimeBackgroundView.h"
+#import "MySetting+CoreDataClass.h"
 @interface JFPresentTimeBackgroundView()
 ///时间view容纳器
 @property (nonatomic, strong) UIView *presentTimeView;
@@ -19,6 +20,8 @@
 @property (nonatomic, strong) UILabel *overTimesLbl;
 ///当前时间数组
 @property (nonatomic, strong) NSArray *presentArr;
+
+@property (nonatomic, strong) MySetting *mySetting;
 
 
 
@@ -171,11 +174,16 @@
     return _timesView;
 }
 
-///次数 label
+//次数 label
 - (UILabel *)overTimesLbl{
     if(!_overTimesLbl){
         _overTimesLbl = [UILabel new];
-        NSString *overTimesText = @"999次";
+        NSArray *temp = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[MySetting fetchRequest] error:nil];
+        NSString *overTimesText = @"0次";
+        if(temp.count != 0){
+            self.mySetting = temp[0];
+            overTimesText = [NSString stringWithFormat:@"%@次",self.mySetting.allFinishedCount];
+        }
         //富文本设置（大小，居中）
         NSMutableParagraphStyle *overTimesParagraphStyle = [NSMutableParagraphStyle new];
         overTimesParagraphStyle.alignment = NSTextAlignmentCenter;
@@ -183,6 +191,29 @@
         _overTimesLbl.attributedText = overTimesAttrString;
     }
     return _overTimesLbl;
+}
+
+
+
+#pragma mark - 通知
+- (void)notificationAction:(NSNotification *)notification{
+    NSString *overTimesCountText = notification.userInfo[@"allFinishedCountText"];
+    //富文本设置（大小，居中）
+    NSMutableParagraphStyle *overTimesParagraphStyle = [NSMutableParagraphStyle new];
+    overTimesParagraphStyle.alignment = NSTextAlignmentCenter;
+    NSMutableAttributedString *overTimesAttrString = [[NSMutableAttributedString alloc] initWithString:overTimesCountText attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:50], NSParagraphStyleAttributeName : overTimesParagraphStyle}];
+    self.overTimesLbl.attributedText = overTimesAttrString;
+}
+
+- (instancetype)init{
+    if(self = [super init]){
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationAction:) name:RefreshHomeOverCount object:nil];
+    }
+    return self;
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:RefreshHomeOverCount object:nil];
 }
 
 @end

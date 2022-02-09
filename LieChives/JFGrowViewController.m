@@ -169,7 +169,9 @@
             NSLog(@"allFinishedCount----%@",upDateSetting.allFinishedCount);
             //添加标签文本
             self.allFinishedCountLblText = [NSString stringWithFormat:@"已完成%@轮",upDateSetting.allFinishedCount];
-                       
+            //给主页完成次数发送通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:RefreshHomeOverCount object:nil userInfo:@{@"allFinishedCountText" : [NSString stringWithFormat:@"%@次",upDateSetting.allFinishedCount]}];
+                  
             /*
              获取之前所有的数据，清零四个房间的数据库
              */

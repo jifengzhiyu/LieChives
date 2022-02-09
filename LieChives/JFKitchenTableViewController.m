@@ -95,14 +95,14 @@
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
 //        NSLog(@"工作台---load");
-    }else if ([cell.textLabel.text  isEqual: @"水池"]){
+    }else if ([cell.textLabel.text isEqual: @"水池"]){
         if(self.kitchen.shuiChi == nil || [self.kitchen.shuiChi  isEqual: @(0)]){
             cell.accessoryType = UITableViewCellAccessoryNone;
         }else{
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
 //        NSLog(@"水池---load");
-    }else if ([cell.textLabel.text  isEqual: @"灶台"]){
+    }else if ([cell.textLabel.text isEqual: @"灶台"]){
         if(self.kitchen.zaoTai == nil || [self.kitchen.zaoTai  isEqual: @(0)]){
             cell.accessoryType = UITableViewCellAccessoryNone;
         }else{

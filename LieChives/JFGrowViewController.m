@@ -16,6 +16,12 @@
 #import "Bedroom+CoreDataClass.h"
 #import "Bathroom+CoreDataClass.h"
 @interface JFGrowViewController ()
+//成员变量
+{
+///所有打勾的累积
+    int _allCheckedCount;
+}
+
 ///已经坚持的天数View
 @property (nonatomic, strong) JFGrowNormalView *dayCountView;
 ///本轮还剩View
@@ -24,7 +30,6 @@
 @property (nonatomic, strong) JFGrowNormalView *finishedCountView;
 ///进度条
 @property (nonatomic, strong) UIProgressView *progressView;
-
 
 
 ///DaysLblText 坚持天数标签的文字
@@ -44,7 +49,6 @@
 
 @property (nonatomic, strong) Bathroom *bathroomModel;
 
-
 @end
 
 @implementation JFGrowViewController
@@ -53,7 +57,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.progressView.progress = 0.7;
 
     [self setupSubViews];
     
@@ -65,7 +68,133 @@
     //写入坚持天数Ui
     [self writeKeepDaysLbl];
     
+}
 
+#pragma mark - viewWillAppear(进度)
+- (void)viewWillAppear:(BOOL)animated{
+    //应该在这里写关于进度的东西
+    //查询厨房
+    NSArray *kitchenTempArr = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
+    //这里要判断，因为数据库表初始化是要下载app点开一次厨房的按钮
+    if(kitchenTempArr.count){
+        for(Kitchen *kitchenTempModel in kitchenTempArr) {
+           //判断一个个属性是否打勾了
+            if([kitchenTempModel.gongZuoTai isEqual:@(1)]){
+                _allCheckedCount ++;
+            }
+            if([kitchenTempModel.chuGui isEqual:@(1)]){
+                _allCheckedCount ++;
+            }
+            if([kitchenTempModel.zaoTai isEqual:@(1)]){
+                _allCheckedCount ++;
+            }
+            if([kitchenTempModel.shuiChi isEqual:@(1)]){
+                _allCheckedCount ++;
+            }
+//            NSLog(@"_allCheckedCount--%d",_allCheckedCount);
+        }
+        }
+    
+    //查询客厅
+    NSArray *livingroomTempArr = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Livingroom fetchRequest] error:nil];
+    //这里要判断，因为数据库表初始化是要下载app点开一次厨房的按钮
+    if(livingroomTempArr.count){
+        for (Livingroom *livingroomTempModel in livingroomTempArr) {
+            //判断一个个属性是否打勾了
+            if([livingroomTempModel.shaFa isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([livingroomTempModel.shuGui isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([livingroomTempModel.dianShiGui isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([livingroomTempModel.bingXiang isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([livingroomTempModel.canZhuo isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([livingroomTempModel.qiangBi isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([livingroomTempModel.xieGui isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([livingroomTempModel.chuWuGui isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([livingroomTempModel.chaJi isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+//            NSLog(@"_allCheckedCount--%d",_allCheckedCount);
+        }
+    }
+    
+    //查询卧室
+    NSArray *bedroomTempArr = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Bedroom fetchRequest] error:nil];
+    //这里要判断，因为数据库表初始化是要下载app点开一次厨房的按钮
+    if(bedroomTempArr.count){
+        for (Bedroom *bedroomTempModel in bedroomTempArr) {
+            if([bedroomTempModel.yiGui isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([bedroomTempModel.chuangTouGui isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([bedroomTempModel.chuang isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([bedroomTempModel.shuGui isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([bedroomTempModel.yangTai isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([bedroomTempModel.qiangBi isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([bedroomTempModel.xueXiZhuo isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([bedroomTempModel.men isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([bedroomTempModel.chuWuGui isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+//            NSLog(@"_allCheckedCount--%d",_allCheckedCount);
+        }
+    }
+    
+    //查询卫生间
+    NSArray *bathroomTempArr = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Bathroom fetchRequest] error:nil];
+    //这里要判断，因为数据库表初始化是要下载app点开一次厨房的按钮
+    if(bathroomTempArr.count){
+        for (Bathroom *bathroomTempModel in bathroomTempArr) {
+            if([bathroomTempModel.shuiChi isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([bathroomTempModel.yuGang isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([bathroomTempModel.xiYuWeiShengYongPinJiaZi isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+            if([bathroomTempModel.maoJinJia isEqual:@(1)]){
+                _allCheckedCount++;
+            }
+//            NSLog(@"_allCheckedCount--%d",_allCheckedCount);
+        }
+    }
+    NSLog(@"_allCheckedCount--%d",_allCheckedCount);
+    //写入完成进度标签
+    [self writeProgressLbl];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    _allCheckedCount = 0;
 }
 
 #pragma mark - 通知相关
@@ -99,14 +228,17 @@
 
 }
 
+
+
 #pragma mark - fetchRoomsFinishedCount
+///四个房间界面退出，和一开始打开app会加载此方法（通知）
 - (void)fetchRoomsFinishedCount{
 #pragma mark 查询四个房间数据库
     //查询厨房
     NSArray *kitchenTempArr = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
     //这里要判断，因为数据库表初始化是要下载app点开一次厨房的按钮
     if(kitchenTempArr.count){
-        for (Kitchen *kitchenTempModel in kitchenTempArr) {
+        for(Kitchen *kitchenTempModel in kitchenTempArr) {
             self.kitchenModel = kitchenTempModel;
         }
     
@@ -117,8 +249,8 @@
     NSArray *livingroomTempArr = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Livingroom fetchRequest] error:nil];
     //这里要判断，因为数据库表初始化是要下载app点开一次厨房的按钮
     if(livingroomTempArr.count){
-        for (Livingroom *livingroomTempNodel in livingroomTempArr) {
-            self.livingroomModel = livingroomTempNodel;
+        for (Livingroom *livingroomTempModel in livingroomTempArr) {
+            self.livingroomModel = livingroomTempModel;
         }
 //    NSLog(@"isKitchenFinished: %d",self.isKitchenFinished);
     }
@@ -231,6 +363,25 @@
 }
 
 #pragma mark - 写入UI文字
+///完成进度
+- (void)writeProgressLbl{
+    float num = 1.0 - (_allCheckedCount / 26.0);
+    int progressNum = (int)(num * 100);
+    //富文本设置（大小，居中）
+    NSMutableParagraphStyle *progressParagraphStyle = [NSMutableParagraphStyle new];
+    progressParagraphStyle.alignment = NSTextAlignmentCenter;
+    NSMutableAttributedString *progressAttrString = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:@"本轮还剩%%%d", progressNum] attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:25], NSParagraphStyleAttributeName : progressParagraphStyle}];
+    self.leftCountView.growNormalViewLbl.attributedText = progressAttrString;
+    //如果四个房间全部打勾，进度条本轮还剩%0
+    //判断如果都打勾就人为清零，进度条本轮还剩%100
+    if(_allCheckedCount == 26){
+        self.progressView.progress = 0;
+    }else{
+    //写入进度条
+    self.progressView.progress = _allCheckedCount / 26.0;
+    }
+}
+
 ///完成总轮次
 - (void)writeAllFinishedCountLbl{
     //富文本设置（大小，居中）

@@ -251,5 +251,7 @@
     //    //发送通知
         [[NSNotificationCenter defaultCenter] postNotificationName:KitchenNotification object:nil];
         
+    //调用系统方法
+    [super viewWillDisappear:animated];
 }
 @end

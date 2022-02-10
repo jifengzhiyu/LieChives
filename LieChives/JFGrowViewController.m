@@ -72,6 +72,9 @@
 
 #pragma mark - viewWillAppear(进度)
 - (void)viewWillAppear:(BOOL)animated{
+    //调用系统方法
+    [super viewWillAppear:animated];
+    
     //应该在这里写关于进度的东西
     //查询厨房
     NSArray *kitchenTempArr = [[JFCoreDataManager sharedManager].managerContext executeFetchRequest:[Kitchen fetchRequest] error:nil];
@@ -195,6 +198,8 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     _allCheckedCount = 0;
+    //调用系统方法
+    [super viewDidAppear:animated];
 }
 
 #pragma mark - 通知相关

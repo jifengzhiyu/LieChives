@@ -329,6 +329,8 @@
     //    //发送通知
         [[NSNotificationCenter defaultCenter] postNotificationName:BedroomNotification object:nil];
         
+    //调用系统方法
+    [super viewWillDisappear:animated];
 }
 
 @end

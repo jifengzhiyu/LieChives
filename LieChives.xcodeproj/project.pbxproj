@@ -653,6 +653,7 @@
 				DEVELOPMENT_TEAM = L6839A4KRP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LieChives/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "躺平韭菜";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -682,6 +683,7 @@
 				DEVELOPMENT_TEAM = L6839A4KRP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LieChives/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "躺平韭菜";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
